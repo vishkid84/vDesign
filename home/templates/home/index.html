@@ -2,5 +2,19 @@
 {% load static %}
 
 {% block content %}
-    <h1 class="display-4 text-success">Test working</h1>
+    <div class="container-fluid">
+        <div class="row" style="height: 600px;">
+            <div class="col-md-6 p-3 bg-info text-white">Box 1
+            </div>
+            <div class="col-md-6 p-3 bg-light" >
+                <h1>Presentation Designer | Web Designer</h1>
+            </div>
+        </div>
+        <div class="row" style="height: 600px;">
+            <div class="col-md-6 p-3 bg-light text-white">Box 1
+            </div>
+            <div class="col-md-6 p-3 bg-success" >Box 2
+            </div>
+        </div>
+    </div>
 {% endblock %}
