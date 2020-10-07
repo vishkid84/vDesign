@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,800;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+body{
+    background-color: #e6eaea;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.home-container{
+    position: absolute;
+}
+
+.title-image-box{
+    height: 500px;
+}
+
+.title-box{
+    padding: 50px;
+    height: 500px;
+}
+
+.home-title{
+    padding: 
+}

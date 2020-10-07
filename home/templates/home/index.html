@@ -2,19 +2,23 @@
 {% load static %}
 
 {% block content %}
-    <div class="container-fluid">
-        <div class="row" style="height: 600px;">
-            <div class="col-md-6 p-3 bg-info text-white">Box 1
+    <div class="container-fluid home-container">
+
+        <div class="row" >
+            <div class="col-md-6 bg-info text-white title-image-box">Box 1
             </div>
-            <div class="col-md-6 p-3 bg-light" >
-                <h1>Presentation Designer | Web Designer</h1>
-            </div>
-        </div>
-        <div class="row" style="height: 600px;">
-            <div class="col-md-6 p-3 bg-light text-white">Box 1
-            </div>
-            <div class="col-md-6 p-3 bg-success" >Box 2
+            <div class="col-md-6 title-box">
+                <h1 class="home-title">Presentation Designer | Web Designer</h1>
+                <a class="btn btn-primary" href="#" role="button">Take a look at my portfolio</a>
             </div>
         </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6 title-image-box">
+            </div>
+            <div class="col-md-6 title-box" >Box 2
+            </div>
+        </div>
+
     </div>
 {% endblock %}

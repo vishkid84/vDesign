@@ -13,6 +13,7 @@
     {% block corecss %}
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -31,7 +32,7 @@
     <title>vDesign {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-white mb-3">
+    <nav class="navbar navbar-expand-sm navbar-light bg-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
