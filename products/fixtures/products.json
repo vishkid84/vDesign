@@ -1,0 +1,35 @@
+[
+  {
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+      "name": "Abstract Powerpoint template",
+      "description": "This is an abstract PowerPoint template which uses abstract images and shapes. This follows a classic cream and brown color scheme with black and white images. This includes an intro slide, timeline, section dividers, quote layout and a few inforgraphics",
+      "price": 49.99,
+      "category": 1,
+      "image": "Abstract_template.png"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+      "name": "Ireland template",
+      "description": "This is a PowerPoint template which is mainly for businesses in Ireland. This template uses images of Ireland which is blended with eye catching layouts and colors. The flashy purple color scheme gives the template a fun and fresh environment. This includes a lot of layouts to showcase points, graphs and figures, quotes and sections along with imagery.",
+      "price": 29.99,
+      "category": 1,
+      "image": "Ireland_template.png"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+      "name": "Technology and growth template",
+      "description": "This is a PowerPoint template focusing on technology, future, growth and innovation. The light bulb outline generates the impression of innovation and wise. The strong flashy color themed lines that move up denotes the growth,authority and ambition while also hinting on technology and innovation. This can be used on both the white and dark background. The graphic on the black background adds more vibrancy, this can be utilized to our advantage to highlight focus slides.",
+      "price": 59.99,
+      "category": 1,
+      "image": "Technology_growth_template.png"
+    }
+  }
+]
