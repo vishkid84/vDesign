@@ -4,7 +4,9 @@
 {% block content %}
     <div class="container-fluid home-container">
 
-        {{ products }}
+        {% for product in products %}
+            <img src="{{ product.image.url }}" alt="">
+        {% endfor %}
 
     </div>
 {% endblock %}
