@@ -25,8 +25,18 @@ body{
     font-weight: 500;
 }
 
+.montserrat-extra-bold{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
 .OpenSans{
     font-family: 'Open Sans', sans-serif;
+}
+
+.main-container{
+    padding: 50px;
+    min-height: 100vh;
 }
 
 main {
@@ -89,3 +99,29 @@ footer {
 }
 
 /* -----------Shop-------------- */
+
+.product-image{
+    width: 100%;
+}
+
+.image-zoom {
+    overflow: hidden;
+}
+
+.image-zoom img {
+    transition: transform .5s ease-in-out;
+}
+
+.image-zoom:hover img {
+    transform: scale(1.05);
+}
+
+.product-detail-container{
+    padding-top: 50px;
+    min-height: 80vh;
+}
+
+.sticky-top{
+    top: 1rem;
+}
+

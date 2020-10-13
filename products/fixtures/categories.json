@@ -4,7 +4,7 @@
     "model": "products.category",
     "fields": {
       "name": "PPT",
-      "friendly_name": "Poweroint template"
+      "friendly_name": "PowerPoint template"
     }
   },
   {
@@ -12,7 +12,7 @@
     "model": "products.category",
     "fields": {
       "name": "Website",
-      "friendly_name": "Website template"
+      "friendly_name": "Bootstrap template"
     }
   }
 ]

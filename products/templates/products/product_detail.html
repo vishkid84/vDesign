@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container main-container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="montserrat-bold mt-2">{{ product.name }}</h4>
+                {% if product.image %}
+                <div class="image-zoom">
+                    <img class="product-image my-3" src="{{ product.image.url }}" alt="{{ product.name }}">
+                </div>
+                {% else %}
+                <div class="image-zoom">
+                    <img class="product-image my-3" src="{{ MEDIA_URL }}No_image.jpg" alt="{{ product.name }}">
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-md-6 product-detail-container">
+                <div class="sticky-top">
+                    <p class="mb-3">{{ product.description }}</p>
+                    <p class="montserrat-extra-bold mb-0 mt-4">Price</p>
+                    <p class="mb-3">€{{ product.price }}</p>
+                    <p class="montserrat-extra-bold mb-0 mt-4">Template type</p>
+                    <p class="mb-3">{{ product.category.friendly_name }}</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}

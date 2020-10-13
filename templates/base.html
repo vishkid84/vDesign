@@ -32,6 +32,7 @@
 
     <title>vDesign {% block extra_title %}{% endblock %}</title>
   </head>
+
   <body>
     <main>
         <nav class="navbar navbar-expand-sm navbar-light bg-white">
@@ -49,7 +50,7 @@
                             <a class="nav-link" href="#">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Shop</a>
+                            <a class="nav-link" href="{% url 'products' %}">Shop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Blog</a>

@@ -2,11 +2,34 @@
 {% load static %}
 
 {% block content %}
-    <div class="container-fluid home-container">
-
-        {% for product in products %}
-            <img src="{{ product.image.url }}" alt="">
-        {% endfor %}
+    <div class="container-fluid main-container">
+        <div class="row">
+            <div class="col">
+                <h2 class="bold-title montserrat-bold">A set of readymade templates for you</h2>
+                <p>Don't stress yourself trying to create presentations that capture viewers' attention. Take a look at the collection of prebuilt PowerPoint templates which you can purchase from here.</p>
+            </div>
+        </div>
+        <div class="row">
+            {% for product in products %}
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                {% if product.image %}
+                <div class="image-zoom">
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img class="product-image my-3" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </a>
+                </div>
+                {% else %}
+                <div class="image-zoom">
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img class="product-image my-3" src="{{ MEDIA_URL }}No_image.jpg" alt="{{ product.name }}">
+                    </a>
+                </div>
+                {% endif %}
+                <h5 class="montserrat-bold mt-2">{{ product.name }}</h5>
+            </div>
+            {% endfor %}
+        </div>
+        
 
     </div>
 {% endblock %}
