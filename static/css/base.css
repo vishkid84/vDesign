@@ -12,8 +12,13 @@ body{
     color: #5680E9 !important;
 }
 
-.btn{
+.btn-primary{
     background-color: #5680E9 !important;
+    border: none;
+}
+
+.btn-primary:hover{
+    background-color: #456dd2 !important;
 }
 
 .montserrat{
@@ -130,3 +135,20 @@ footer {
     padding: 5px 10px;
 }
 
+.shopping-bag-container{
+    position: absolute;
+    right: 0;
+    top: 050;
+    padding-right: 50px;
+    font-size: 1.1rem;
+}
+
+.shopping-bag-container a{
+    color: #2e2e38 !important;
+    text-decoration: none;
+}
+
+.shopping-bag-btn .btn{
+    border-radius: 50px;
+    padding: 10px 15px;
+}

@@ -4,12 +4,12 @@
 {% block content %}
     <div class="container-fluid main-container">
         <div class="row">
-            <div class="col-9">
+            <div class="col-md-9">
                 <h2 class="bold-title montserrat-bold">A set of readymade templates for you</h2>
                 <p>Don't stress yourself trying to create presentations that capture viewers' attention. Take a look at the collection of prebuilt PowerPoint templates which you can purchase from here.</p>
             </div>
-            <div class="col-3">
-                <div class="dropdown show dropleft">
+            <div class="col-md-3">
+                <div class="dropdown show dropleft ">
                     <a class="btn btn-primary products_dropdown-button dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Filter by
                     </a>
@@ -20,6 +20,22 @@
                     </div>
                 </div>
             </div>
+
+            <div class="shopping-bag-container text-right">
+                <a class="{% if grand_total %} font-weight-bold{% else %}text-black{% endif %}" href="{% url 'view_bag' %}">
+                    <div class="text-center">
+                        <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                        <p class="my-0">
+                            {% if grand_total %}
+                                ${{ grand_total|floatformat:2 }}
+                            {% else %}
+                                $0.00
+                            {% endif %}
+                        </p>
+                    </div>
+                </a>
+            </div>
+
         </div>
         <div class="row">
             {% for product in products %}
@@ -41,7 +57,5 @@
             </div>
             {% endfor %}
         </div>
-        
-
     </div>
 {% endblock %}
