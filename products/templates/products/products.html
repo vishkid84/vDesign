@@ -4,9 +4,21 @@
 {% block content %}
     <div class="container-fluid main-container">
         <div class="row">
-            <div class="col">
+            <div class="col-9">
                 <h2 class="bold-title montserrat-bold">A set of readymade templates for you</h2>
                 <p>Don't stress yourself trying to create presentations that capture viewers' attention. Take a look at the collection of prebuilt PowerPoint templates which you can purchase from here.</p>
+            </div>
+            <div class="col-3">
+                <div class="dropdown show dropleft">
+                    <a class="btn btn-primary products_dropdown-button dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Filter by
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="{% url 'products' %}?category=ppt">PowerPoint templates</a>
+                        <a class="dropdown-item" href="{% url 'products' %}?category=bootstrap">Bootstrap template</a>
+                        <a class="dropdown-item" href="{% url 'products' %}?category=ppt,bootstrap">All</a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">

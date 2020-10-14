@@ -13,7 +13,7 @@ body{
 }
 
 .btn{
-    background-color: #5680E9;
+    background-color: #5680E9 !important;
 }
 
 .montserrat{
@@ -123,5 +123,10 @@ footer {
 
 .sticky-top{
     top: 1rem;
+}
+
+.products_dropdown-button{
+    border-radius: 50px;
+    padding: 5px 10px;
 }
 
