@@ -6,6 +6,10 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
+.navbar{
+    z-index: 2;
+}
+
 .navbar-brand{
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
@@ -147,9 +151,12 @@ footer {
 .shopping-bag-container{
     position: absolute;
     right: 0;
-    top: 050;
-    padding-right: 50px;
+    top: 75px;
+    margin-right: 35px;
     font-size: 1.1rem;
+    padding: 10px;
+    border: 1px solid;
+    background: #fafafa;
 }
 
 .shopping-bag-container a{
@@ -165,3 +172,12 @@ footer {
 .shopping-bag-btn .btn-secondary{
     width: 170px;
 }
+
+
+/* --------Media center---------------- */
+
+@media (max-width: 992px) { 
+    .main-container{
+        padding-top: 80px;
+    }
+ }

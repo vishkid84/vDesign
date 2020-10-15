@@ -6,13 +6,12 @@ def view_bag(request):
 
 def add_to_bag(request, item_id):
 
-    current_bag = request.POST.get('current_bag')
+    current_bag = int(request.POST.get('current_bag'))
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
     bag[item_id] = current_bag
     
     request.session['bag'] = bag
-    print(request.session['bag'])
 
     return redirect(redirect_url)
