@@ -173,6 +173,14 @@ footer {
     width: 170px;
 }
 
+.order-summary-btn{
+    background: #d2d2da !important;
+}
+
+.checkout-btn{
+    background: #2e2e38 !important;
+}
+
 
 /* --------Media center---------------- */
 

@@ -2,25 +2,109 @@
 {% load static %}
 
 {% block content %}
-    <div class="container-fluid main-container">
+    <div class="container main-container">
         <div class="row">
             <div class="col">
                 <h2 class="bold-title montserrat-bold">Shopping bag</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
+        <div class="row mt-2">
+            <div class="col bg-light">
                 {% if bag_items %}
-                <p>{{ bag_items }}</p>
+                <div class="table-responsive mt-3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="col" class="border-0 bg-light">
+                                <div class="p-2 px-3 text-uppercase">Product</div>
+                            </th>
+                            <th scope="col" class="border-0 bg-light">
+                                <div class="p-2 px-3 text-uppercase"></div>
+                            </th>
+                            <th scope="col" class="border-0 bg-light">
+                                <div class="py-2 text-uppercase">Price</div>
+                            </th>
+                            <th scope="col" class="border-0 bg-light">
+                                <div class="py-2 text-uppercase">Category</div>
+                            </th>
+                            <th scope="col" class="border-0 bg-light">
+                                <div class="py-2 text-uppercase">Remove</div>
+                            </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in bag_items %}
+                            <tr class="bg-light">
+                                {% if item.product.image %}
+                                <td class="p-3 w-25">
+                                    <img class="img-fluid" src="{{ item.product.image.url }}">
+                                </td>
+                                {% else %}
+                                <td class="p-3 w-25">
+                                    <img class="img-fluid" src="{{ MEDIA_URL }}No_image.jpg">
+                                </td>
+                                {% endif %}
+                                <td class="py-3">
+                                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                </td>
+                                <td class="py-3">
+                                    <p class="my-0">${{ item.product.price }}</p>
+                                </td>
+                                <td class="py-3 w-25">
+                                    <p class="my-0">{{ item.product.category.friendly_name }}</p>
+                                </td>
+                                <td class="py-3 text-center">
+                                    <a href="" class="text-dark remove-item" id="remove_{{ item.item_id }}"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <hr>
+                <div class="col-lg-6 pl-0">
+                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold order-summary-btn">Order summary 
+                    </div>
+                    <div class="p-4">
+                        <ul class="list-unstyled mb-4">
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Total</strong>
+                            <h5 class="font-weight-bold">
+                                {% if total %}
+                                    €{{ total|floatformat:2 }}
+                                {% else %}
+                                    €0.00
+                                {% endif %}
+                            </h5>
+                        </li>
+                        </ul>
+                        <a href="#" class="btn btn-dark rounded-pill py-2 btn-block checkout-btn">Procceed to checkout</a>
+                    </div>
+                </div>
                 {% else %}
-                <p>Your bag is empty</p>
+                <p class="p-3 mt-3 mb-3">Your bag is empty</p>
                 {% endif %}
             </div>
         </div>
         <div class="row">
-            <div class="col shopping-bag-btn mt-5">
+            <div class="col shopping-bag-btn mt-4">
                 <a href="{% url 'products' %}" class="btn btn-primary">Continue Shopping</a>
             </div>
         </div>
     </div>
+
+<script type="text/javascript">
+
+// Remove item and reload on click
+$('.remove-item').click(function(e) {
+    var csrfToken = "{{ csrf_token }}";
+    var itemId = $(this).attr('id').split('remove_')[1];
+    var url = `/bag/remove/${itemId}/`;
+    var data = {'csrfmiddlewaretoken': csrfToken};
+
+    $.post(url, data).done(function() {
+        location.reload();
+    });
+})
+</script>
 {% endblock %}
+
