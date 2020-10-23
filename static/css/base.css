@@ -181,6 +181,14 @@ footer {
     background: #2e2e38 !important;
 }
 
+/* -----------bootstrap toasts----------- */
+
+.message-container{
+    position: fixed;
+    top: 130px;
+    right: 35px;
+    z-index: 999999;
+}
 
 /* --------Media center---------------- */
 
