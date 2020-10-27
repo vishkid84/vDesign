@@ -83,6 +83,10 @@ footer {
     z-index: -2;
 }
 
+.form-control{
+    border-radius: 0;
+}
+
 /* ----------Home-------------- */
 .title-image-box{
     height: 500px;
