@@ -30,7 +30,7 @@
                                 {% if item.product.image %}
                                     <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
                                 {% else %}
-                                    <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    <img class="w-100" src="{{ MEDIA_URL }}No_image.jpg" alt="{{ product.name }}">
                                 {% endif %}
                             </a>
                         </div>
@@ -41,8 +41,8 @@
                             <p class="my-0 small text-muted">${{ item.product.price }}</p>
                         </div>
                     </div>
+                    <hr>
                 {% endfor %}
-                <hr class="my-0">
                 <div class="row text-black text-right">
                     <div class="col-7 offset-2">
                         <p class="my-0">Total:</p>
@@ -51,6 +51,7 @@
                         <p class="my-0">${{ total | floatformat:2 }}</p>
                     </div>
                 </div>
+                <hr>
             </div>
             <div class="col-12 col-md-6">
                 <p class="text-muted">Please fill out the form to complete your order</p>
