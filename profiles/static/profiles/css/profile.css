@@ -1,0 +1,28 @@
+#profile-update-form input::placeholder {
+    color: #aab7c4;
+}
+
+#profile-update-form input {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+#profile-update-form input:focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+    border-color: #80bdff;
+}
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: #000;
+}
+
+#id_default_country option:first-child{
+    color: #aab7c4 !important;
+}
