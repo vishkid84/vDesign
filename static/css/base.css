@@ -194,6 +194,29 @@ footer {
     z-index: 999999;
 }
 
+/* ------Allauth form formatting--------- */
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #6c757d; /* text-secondary */
+}
+
+.allauth-form-inner-content input[type='submit'] {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+.allauth-form-inner-content input:focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+    border-color: #80bdff;
+}
+
 /* --------Media center---------------- */
 
 @media (max-width: 992px) { 
