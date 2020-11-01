@@ -168,13 +168,17 @@ footer {
     text-decoration: none;
 }
 
-.shopping-bag-btn .btn{
+.shopping-bag-btn .btn, .add-product-form .btn{
     border-radius: 50px;
     padding: 10px 15px;
 }
 
 .shopping-bag-btn .btn-secondary{
     width: 170px;
+}
+
+.add-product-form .btn{
+    width: 130px;
 }
 
 .order-summary-btn{
