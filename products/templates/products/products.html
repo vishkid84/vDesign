@@ -54,9 +54,22 @@
                 </div>
                 {% endif %}
                 <h5 class="montserrat-bold mt-2">{{ product.name }}</h5>
+                {% if request.user.is_superuser %}
+                    <small >
+                        <a href="{% url 'edit_product' product.id %}" class="mr-2">Edit</a>
+                        <a class="text-danger confirm-delete" href="{% url 'delete_product' product.id %}">Delete</a>
+                    </small>
+                {% endif %}
             </div>
             {% endfor %}
         </div>
     </div>
+
+    <!-- Script for delete confirmation -->
+    <script>
+        $(document).on('click', '.confirm-delete', function(){
+            return confirm('Are you sure you want to delete this?');
+        })
+    </script>
 {% endblock %}
 
