@@ -166,7 +166,11 @@
 
         <div class="row mt-3">
             <div class="col">
+            {% if from_profile %}
+                <a href="{% url 'profile' %}" class="btn btn-primary rounded-pill py-2">Go back to Profile</a>
+            {% else %}
                 <a href="{% url 'products' %}" class="btn btn-primary rounded-pill py-2">Find more templates</a>
+            {% endif %}
             </div>
         </div>
     </div>
