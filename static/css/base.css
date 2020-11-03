@@ -189,6 +189,25 @@ footer {
     background: #2e2e38 !important;
 }
 
+/* -----Blog------ */
+.blog-container a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.blog-container a:hover{
+    color: #555;
+}
+
+.blog-container .author::after, .blog-container .date::after, .blog-container .comment_count::after {
+    content: '|';
+    display: inline-block;
+    margin: 0 7px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+
 /* -----------bootstrap toasts----------- */
 
 .message-container{
