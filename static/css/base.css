@@ -199,7 +199,9 @@ footer {
     color: #555;
 }
 
-.blog-container .author::after, .blog-container .date::after, .blog-container .comment_count::after {
+.blog-container .author::after, 
+.blog-container .date::after, 
+.blog-container .comment_count::after {
     content: '|';
     display: inline-block;
     margin: 0 7px;
@@ -207,6 +209,22 @@ footer {
     color: #ccc;
 }
 
+.pagination li.page-item {
+    margin: 0 5px;
+}
+
+.pagination a.page-link {
+    background: #C1C8E4;
+    color: #5680E9;
+    border: none;
+    text-align: center;
+}
+
+.pagination a.page-link:hover, 
+.pagination a.page-link.active {
+    background:#5680E9;
+    color: white;
+}
 
 /* -----------bootstrap toasts----------- */
 
