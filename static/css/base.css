@@ -226,6 +226,36 @@ footer {
     color: white;
 }
 
+.blog-search{
+    margin-bottom: 40px;
+    padding: 30px;
+    border: 1px solid #adb5bd;
+    background: white;
+}
+
+.blog-search input{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.95em;
+    font-family: "Open Sans",sans-serif;
+    font-weight: 400;
+    background: none;
+}
+
+.blog-search button{
+    background: none;
+    border: none;
+    color: #5680E9;
+}
+
+.blog-search input:focus,
+.blog-search button:focus{
+    outline: none;
+}
+
 /* -----------bootstrap toasts----------- */
 
 .message-container{

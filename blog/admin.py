@@ -7,7 +7,7 @@ class BlogAdmin(admin.ModelAdmin):
     list_display = (
         'author',
         'title',
-        'description',
+        'content',
         'date',
     )
 

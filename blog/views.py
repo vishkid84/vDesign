@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 
 from .models import Blog
@@ -8,7 +8,7 @@ def blogs(request):
     blog_list = Blog.objects.all()
     latest = Blog.objects.order_by('-date')[0:3]
 
-    paginator =Paginator(blog_list, 1)
+    paginator =Paginator(blog_list, 3)
     page = request.GET.get('page', 1)
 
     try:
@@ -24,4 +24,17 @@ def blogs(request):
         'latest': latest,
         'blog_list': number_of_blogs,
     }
+    return render(request, template, context)
+
+
+def blog_detail(request, blog_id):
+
+    blog = get_object_or_404(Blog, pk=blog_id)
+    
+    template = 'blog/blog_detail.html'
+
+    context = {
+        'blog': blog,
+    }
+
     return render(request, template, context)
