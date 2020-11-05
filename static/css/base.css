@@ -105,14 +105,17 @@ footer {
     font-weight: 600 !important;
 }
 
-.title-box .btn{
+.title-box .btn,
+.rounded-main-btn{
     border-radius: 50px;
     padding: 15px 20px;
 }
 
+
 /* ----------About-------------- */
 
-.about-me{
+.about-me, 
+.gutter-all-sides{
     padding: 50px;
 }
 
@@ -190,6 +193,10 @@ footer {
 }
 
 /* -----Blog------ */
+.blog-container{
+    padding: 50px;
+}
+
 .blog-container a{
     color: inherit;
     text-decoration: none;
@@ -204,9 +211,13 @@ footer {
 .blog-container .comment_count::after {
     content: '|';
     display: inline-block;
-    margin: 0 7px;
+    margin: 1px;
     font-size: 0.9em;
     color: #ccc;
+}
+
+.author small{
+    font-weight: 600;
 }
 
 .pagination li.page-item {
@@ -254,6 +265,43 @@ footer {
 .blog-search input:focus,
 .blog-search button:focus{
     outline: none;
+}
+
+.row.height-equal{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.row.height-equal:before,
+.row.height-equal:after {
+    display: block;
+}
+
+.row.height-equal > [class*='col-'] {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.row.height-equal > [class*='col-'] > * {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto; 
+}
+
+.add-comment textarea{
+    background: none;
+    border: none;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 0;
 }
 
 /* -----------bootstrap toasts----------- */

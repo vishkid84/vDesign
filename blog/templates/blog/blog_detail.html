@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+    
     <div class="container-fluid main-container">
         <div class="row">
             <div class="col">
@@ -31,6 +32,54 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 offset-3">
+                <div class="post-comments">
+                    <header>
+                        <h4 class="bold-title montserrat-bold mt-5 mb-4">Comments <span class="no-of-comments">({{blog.comments.count}})</span></h4>
+                    </header>
+                    <div class="">
+                        {% for comment in blog.get_comments %}
+                        <div class="comment bg-white p-3 mb-0">
+                            <div class="comment-header d-flex justify-content-between">
+                                <div class="user d-flex align-items-center">
+                                    <small class="title"><strong>{{comment.user.username}} | </strong><span class="date">{{comment.date}}</span></small>
+                                </div>
+                            </div>
+                            <div class="comment-body mt-3">
+                                <p>{{comment.comment_content}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% if request.user.is_authenticated %}
+        <div class="row">
+            <div class="col-md-6 offset-3">
+                <div class="add-comment">
+                    <header>
+                        <h4 class="bold-title montserrat-bold mt-5 mb-4">Leave a reply</h4>
+                    </header>
+                    <form method="POST" action="#" class="commenting-form bg-white p-3">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                            {{ form }}
+                            </div>
+                            <div class="form-group col-md-12">
+                                <button type="submit" class="btn btn-primary rounded-pill py-2">Add Comment</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% endif %}
         </div>
         
     </div>
