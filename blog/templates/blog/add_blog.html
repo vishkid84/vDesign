@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container main-container">
+        
+        <div class="row">
+            <div class="col-lg-9">
+                <h2 class="bold-title montserrat-bold">Add a Blog</h2>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12 mt-3">
+                <form action="{% url 'add_blog' %}" method="POST" class="add-blog-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <input type="submit" class="btn btn-primary mr-3 mt-3 rounded-pill " value="Add Blog">
+                    <a href="{% url 'blogs' %}" class="btn btn-secondary mt-3 rounded-pill">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

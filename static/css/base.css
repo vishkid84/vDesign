@@ -206,16 +206,6 @@ footer {
     color: #555;
 }
 
-.blog-container .author::after, 
-.blog-container .date::after, 
-.blog-container .comment_count::after {
-    content: '|';
-    display: inline-block;
-    margin: 1px;
-    font-size: 0.9em;
-    color: #ccc;
-}
-
 .author small{
     font-weight: 600;
 }
@@ -297,11 +287,17 @@ footer {
 }
 
 .add-comment textarea{
-    background: none;
     border: none;
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     padding: 10px;
     border-radius: 0;
+}
+
+.comment-section{
+    position: relative;
+    left: 0;
+    min-height: 70vh;
+    width: 100%;
 }
 
 /* -----------bootstrap toasts----------- */
