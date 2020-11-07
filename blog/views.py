@@ -139,6 +139,7 @@ def delete_blog(request, blog_id):
     return redirect(reverse('blogs'))
 
 
+@login_required
 def edit_comment(request, blog_id, comment_id):
     blog = get_object_or_404(Blog, pk=blog_id)
     comment = get_object_or_404(BlogComment, pk=comment_id)
@@ -163,3 +164,12 @@ def edit_comment(request, blog_id, comment_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_comment(request, blog_id, comment_id):
+    blog = get_object_or_404(Blog, pk=blog_id)
+    comment = get_object_or_404(BlogComment, pk=comment_id)
+    comment.delete()
+    messages.success(request, 'Comment deleted')
+    return redirect(reverse('blog_detail', args=[blog.id]))

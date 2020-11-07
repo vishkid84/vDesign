@@ -100,7 +100,7 @@
             {% for blog in latest %}
             <div class="col-lg-4">
                 <div class="blog-container bg-white p-3 mb-3">
-                    <a href="{% url 'blog_detail' blog.id %}"><h5 class="mt-3 bold-title montserrat-bold">{{blog.title}}</h5></a>
+                    <a class="blog-title-link" href="{% url 'blog_detail' blog.id %}"><h5 class="mt-3 bold-title montserrat-bold">{{blog.title}}</h5></a>
                     <div class="d-flex">
                         <div class="author">
                             <small>{{blog.author}} | </small>
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                     <div class="comment_count">
-                        <small><i class="far fa-comment"></i> {{blog.comment_count}}</small>
+                        <small><i class="far fa-comment"></i> {{blog.comments.count}}</small>
                     </div>
                 </div>
             </div>

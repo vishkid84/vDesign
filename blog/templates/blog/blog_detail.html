@@ -40,6 +40,7 @@
                         {% endif %}
                     </div>
                 </div>
+                <a href="{% url 'blogs' %}" class="btn btn-secondary rounded-0 mb-4"><i class="fas fa-angle-left"></i> Back to Blogs</a>
             </div>
         </div>
 
@@ -64,6 +65,7 @@
                             </div>
                             {% if comment.user.id == user.id or request.user.is_superuser %}
                                 <small><a href="{% url 'edit_comment' blog.id comment.id %}">Edit comment</a></small>
+                                <small><a class="text-danger confirm-delete ml-3" href="{% url 'delete_comment' blog.id comment.id %}">Delete comment</a></small>
                             {% endif %}
                             <hr>
                             {% endfor %}
