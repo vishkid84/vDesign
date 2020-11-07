@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -52,6 +52,14 @@
                     </div>
                     <div class="product_detail-btn ">
                         <a href="{% url 'blog_detail' blog.id %}" class="btn btn-primary rounded-pill py-2 text-white mt-3">Read more</a>
+                    </div>
+                    <div class="edit-delete-blog mt-3">
+                        {% if request.user.is_superuser %}
+                            <small >
+                                <a href="{% url 'edit_blog' blog.id %}" class="mr-2">Edit</a>
+                                <a class="text-danger confirm-delete" href="{% url 'delete_blog' blog.id %}">Delete</a>
+                            </small>
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}
@@ -109,8 +117,13 @@
             {% endfor %}
         </div>
 
-        
     </div>
+
+    <script>
+        $(document).on('click', '.confirm-delete', function(){
+            return confirm('Are you sure you want to delete this?');
+        })
+    </script>
     
 {% endblock %}
 
