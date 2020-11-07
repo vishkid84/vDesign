@@ -35,7 +35,7 @@
                 {% for blog in blog_list %}
                 <div class="blog-container bg-white p-3 mb-3">
                     <a href="{% url 'blog_detail' blog.id %}">
-                    <p>{{blog.category.friendly_name}}</p>
+                    <p class="text-uppercase">{{blog.category.friendly_name}}</p>
                     <h4 class="mt-3 bold-title montserrat-bold">{{blog.title}}</h4>
                     </a>
                     <p>{{blog.content|slice:":200"}}</p>

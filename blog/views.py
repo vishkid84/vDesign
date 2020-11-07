@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 from .models import Blog
 from .forms import CommentForm, BlogForm
+from django.contrib.auth.models import User
 
 def blogs(request):
     blog_list = Blog.objects.all()
@@ -67,6 +68,7 @@ def blog_detail(request, blog_id):
 
     return render(request, template, context)
 
+
 @login_required
 def add_blog(request):
     if not request.user.is_superuser:
@@ -76,17 +78,50 @@ def add_blog(request):
     if request.method == 'POST':
         form = BlogForm(request.POST or None)
         if form.is_valid():
+            user = User.objects.get(username=request.user.username)
+            form.instance.author = user
             blog = form.save()
             messages.success(request, 'Successfully added blog!')
             return redirect(reverse('blogs'))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add blog. Please ensure the form is valid.')
     else:
         form = BlogForm()
 
     template = 'blog/add_blog.html'
     context ={
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_blog(request, blog_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only admin has the permission to do that.')
+        return redirect(reverse('home'))
+
+    blog = get_object_or_404(Blog, pk=blog_id)
+
+    if request.method == 'POST':
+        form = BlogForm(request.POST, instance=blog)
+        if form.is_valid():
+            user = User.objects.get(username=request.user.username)
+            form.instance.author = user
+            blog = form.save()
+            messages.success(request, 'Successfully added blog!')
+            return redirect(reverse('blog_detail', args=[blog.id]))
+        else:
+            messages.error(request, 'Failed to update blog. Please ensure the form is valid.')
+    else:
+        form = BlogForm(instance=blog)
+        messages.info(request, f'You are updating {blog.title}')
+
+    template = 'blog/edit_blog.html'
+    context ={
+        'form': form,
+        'blog': blog
     }
 
     return render(request, template, context)

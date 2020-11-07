@@ -4,9 +4,10 @@ from .models import BlogComment, Blog
 class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
-        fields = ('category',
+        fields = ['category',
                   'title',
-                  'content')
+                  'content',
+                  ]
 
 
 class CommentForm(forms.ModelForm):
