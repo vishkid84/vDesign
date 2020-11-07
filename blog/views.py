@@ -4,7 +4,7 @@ from django.db.models import Count, Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from .models import Blog
+from .models import Blog, BlogComment
 from .forms import CommentForm, BlogForm
 from django.contrib.auth.models import User
 
@@ -110,7 +110,7 @@ def edit_blog(request, blog_id):
             user = User.objects.get(username=request.user.username)
             form.instance.author = user
             blog = form.save()
-            messages.success(request, 'Successfully added blog!')
+            messages.success(request, 'Successfully updated the blog!')
             return redirect(reverse('blog_detail', args=[blog.id]))
         else:
             messages.error(request, 'Failed to update blog. Please ensure the form is valid.')
@@ -137,3 +137,29 @@ def delete_blog(request, blog_id):
     blog.delete()
     messages.success(request, 'Blog deleted')
     return redirect(reverse('blogs'))
+
+
+def edit_comment(request, blog_id, comment_id):
+    blog = get_object_or_404(Blog, pk=blog_id)
+    comment = get_object_or_404(BlogComment, pk=comment_id)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.instance.user = request.user
+            comment = form.save()
+            messages.success(request, 'Successfully updated comment!')
+            return redirect(reverse('blog_detail', args=[blog.id]))
+        else:
+            messages.error(request, 'Failed to update blog. Please ensure the form is valid.')
+    else:
+        form = CommentForm(instance=comment)
+
+    template = 'blog/edit_comment.html'
+    context ={
+        'form': form,
+        'blog': blog,
+        'comment': comment,
+    }
+
+    return render(request, template, context)

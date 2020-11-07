@@ -2,12 +2,12 @@
     padding: 50px;
 }
 
-.blog-container a{
+.blog-container .blog-title-link{
     color: inherit;
     text-decoration: none;
 }
 
-.blog-container a:hover{
+.blog-container .blog-title-link:hover{
     color: #555;
 }
 
