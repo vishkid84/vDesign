@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container main-container">
+        <div class="row">
+            <div class="col">
+                <h2 class="bold-title montserrat-bold">Get a quote for PowerPoint project</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {% for project in projects %}
+                 <p>{{project.project_name}}</p>
+                    {% for req in project.requirements%}
+                    <ul>
+                        <li>{{req}}</li>
+                    </ul>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+    
+{% endblock %}
+
