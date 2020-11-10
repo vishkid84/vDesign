@@ -15,14 +15,12 @@
 
         <div class="row">
             <div class="col">
-                {% for project in projects %}
-                 <p>{{project.project_name}}</p>
-                    {% for req in project.requirements%}
-                    <ul>
-                        <li>{{req}}</li>
-                    </ul>
-                    {% endfor %}
-                {% endfor %}
+                <form action="{% url 'ppt_quote' %}" method="POST" class="ppt-quote-form">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <input type="submit" class="btn btn-primary mr-3 mt-3 rounded-pill " value="Get a quote">
+                    <a href="{% url 'blogs' %}" class="btn btn-secondary mt-3 rounded-pill">Cancel</a>
+                </form>
             </div>
         </div>
 

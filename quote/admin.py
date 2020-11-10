@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import PowerPointProject, PowerPointQuote
+from .models import PowerPointProject
 
 
 # Register your models here.
@@ -10,15 +10,8 @@ class PowerPointProjectAdmin(admin.ModelAdmin):
         'project_name',
         'project_description',
         'requirements',
+        'quote',
     )
 
 admin.site.register(PowerPointProject, PowerPointProjectAdmin)
 
-class PowerPointQuoteAdmin(admin.ModelAdmin):
-    
-    list_display = (
-        'user',
-        'project',
-    )
-
-admin.site.register(PowerPointQuote, PowerPointQuoteAdmin)

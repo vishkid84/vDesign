@@ -35,8 +35,6 @@ def blogs(request):
     except EmptyPage:
         number_of_blogs = paginator.page(paginator.num_pages)
 
-    
-
     template = 'blog/blogs.html'
     context = {
         'number_of_blogs': number_of_blogs,
@@ -71,6 +69,7 @@ def blog_detail(request, blog_id):
 
 @login_required
 def add_blog(request):
+    ''' Add a blog if user is a super user, else error message '''
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only admin has the permission to do that.')
         return redirect(reverse('home'))
@@ -141,6 +140,7 @@ def delete_blog(request, blog_id):
 
 @login_required
 def edit_comment(request, blog_id, comment_id):
+    ''' Logged in user can edit their comment if any'''
     blog = get_object_or_404(Blog, pk=blog_id)
     comment = get_object_or_404(BlogComment, pk=comment_id)
 
