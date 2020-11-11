@@ -13,13 +13,13 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mt-4">
             <div class="col">
                 <form action="{% url 'ppt_quote' %}" method="POST" class="ppt-quote-form">
                     {% csrf_token %}
                     {{form|crispy}}
                     <input type="submit" class="btn btn-primary mr-3 mt-3 rounded-pill " value="Get a quote">
-                    <a href="{% url 'blogs' %}" class="btn btn-secondary mt-3 rounded-pill">Cancel</a>
+                    <a href="{% url 'home' %}" class="btn btn-secondary mt-3 rounded-pill">Cancel</a>
                 </form>
             </div>
         </div>

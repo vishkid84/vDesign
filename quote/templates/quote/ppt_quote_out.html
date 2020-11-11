@@ -9,23 +9,16 @@
     <div class="container main-container">
         <div class="row">
             <div class="col">
-                <h2 class="bold-title montserrat-bold">This is quote for PowerPoint project</h2>
+                <h2 class="bold-title montserrat-bold">Click on your project name to get your quote</h2>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col">
-                {% for project in projects %}
-                <p>{{project.client}}</p>
-                <p>{{project.project_name}}</p>
-                <p>{{project.quote}}</p>
-                    <ul>
-                        <li>{{project.requirements}}</li>
-                    </ul>
-                    <p>{{quote}}</p>
-                    <hr>
-                {% endfor %}
+        <div class="row mt-3">
+             {% for project in projects %}
+            <div class="col-12 mb-3">
+                <a class="btn btn-primary" href="{% url 'ppt_quote_detail' project.id %}">{{project.your_full_name}} - {{project.project_name}}</a> 
             </div>
+            {% endfor %}
         </div>
 
     </div>

@@ -192,6 +192,13 @@ footer {
     background: #2e2e38 !important;
 }
 
+
+/* --------Contact-------- */
+
+.ppt-quote-form .btn{
+    width: 120px;
+}
+
 /* -----------bootstrap toasts----------- */
 
 .message-container{

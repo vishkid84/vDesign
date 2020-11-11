@@ -12,8 +12,6 @@ def ppt_quote(request):
     if request.method == 'POST':
         form = PowerPointProjectForm(request.POST)
         if form.is_valid():
-            user = User.objects.get(username=request.user.username)
-            form.instance.client = user
 
             # Getting the quote
             '''
@@ -63,14 +61,21 @@ def ppt_quote(request):
     return render(request, template, context)
 
 def ppt_quote_out(request):
-        # Page to show the quote to the client
-        projects = PowerPointProject.objects.all().order_by('-date')
+    # Page to show first 5 quotes received
+    projects = PowerPointProject.objects.all().order_by('-date')[0:5]
 
-        if request.GET:
-            print(projects)
+    template = 'quote/ppt_quote_out.html'
+    context = {
+        'projects': projects,
+    }
+    return render(request, template, context)
 
-        template = 'quote/ppt_quote_out.html'
-        context = {
-            'projects': projects,
-        }
-        return render(request, template, context)
+def ppt_quote_detail(request, project_id):
+    # Page to show the quote to the client
+    quote = get_object_or_404(PowerPointProject, pk=project_id)
+
+    template = 'quote/ppt_quote_detail.html'
+    context = {
+        'quote': quote,
+    }
+    return render(request, template, context)

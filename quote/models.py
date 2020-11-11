@@ -2,6 +2,7 @@ from django.db import models
 from multiselectfield import MultiSelectField
 from django.contrib.auth.models import User
 
+
 class PowerPointProject(models.Model):
     PPT_CHOICES = (('Low', 'Check for alignment issues, fix fonts and font sizes'),
                     ('Low', 'Change text/table to other layouts to represent better'),
@@ -14,6 +15,7 @@ class PowerPointProject(models.Model):
                     ('High', 'Use high-end complex animations to represent the data'))
 
     client = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
+    your_full_name = models.CharField(max_length=300)
     project_name = models.CharField(max_length=250)
     project_description = models.TextField()
     requirements = MultiSelectField(choices=PPT_CHOICES)

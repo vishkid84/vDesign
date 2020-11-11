@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container main-container">
+        <div class="row">
+            <div class="col">
+                <h2 class="bold-title montserrat-bold">You can find your quote below</h2>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <div class="quote-container bg-blue p-3 mb-3">
+                    <p class="mb-3"><span class="montserrat-bold">Client Name: </span>{{quote.your_full_name}}</p>
+                    <p class="mb-3"><span class="montserrat-bold">Project Name: </span>{{quote.project_name}}</p>
+                    <p class="mb-3"><span class="montserrat-bold">Project Details: </span>{{quote.project_description}}</p>
+                    <hr>
+                    <p class="mb-3"><span class="montserrat-bold">Your Quote: </span> <span class="montserrat-extra-bold">€{{quote.quote}}</span> per hour</p>
+                </div>
+                <small class="mt-5">* The quote is only an estimate. It may slightly vary depending on the complexity of the slides.</small>
+            </div>
+        </div>
+
+    </div>
+    
+{% endblock %}
+
