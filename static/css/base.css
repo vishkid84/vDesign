@@ -6,6 +6,10 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
+h2 {
+    font-size: 2.5rem;
+}
+
 .navbar{
     z-index: 2;
 }
@@ -72,6 +76,10 @@ main {
     background-color: #d2d2da;
 }
 
+.bg-light-blue{
+    background-color: #ade1f5;
+}
+
 footer {
     position: fixed;
     bottom: 0;
@@ -111,13 +119,13 @@ footer {
     padding: 15px 20px;
 }
 
-
-/* ----------About-------------- */
-
 .about-me, 
-.gutter-all-sides{
+.gutter-all-sides,
+.contact-me{
     padding: 50px;
 }
+
+/* ----------About-------------- */
 
 .presentation-design-box, .web-design-box{
     margin-bottom: 8rem !important;

@@ -7,5 +7,6 @@ class ContactAdmin(admin.ModelAdmin):
         'full_name',
         'email',
     )
+    
 
 admin.site.register(Contact, ContactAdmin)
