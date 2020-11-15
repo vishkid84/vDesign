@@ -10,29 +10,20 @@
         </div>
     </div>
 
-    <div class="container-fluid bg-blue">
-        <div class="row">
+    <section id="photos" class="bg-white">
         {% for portfolio in portfolios %}
-            <div class="col-md-4 my-5">
-                <div class="portfolio-container">
-                    {% if portfolio.thumb_image %}
-                        <div class="image-zoom">
-                            <a href="#">
-                                <img src="{{ portfolio.thumb_image.url }}" alt="{{ portfolio.name }}">
-                            </a>
-                        </div>
-                    {% else %}
-                    <img src="{{ MEDIA_URL }}No_image.jpg" alt="{{ portfolio.name }}">
-                    {% endif %}
-                    <div class="portfolio-content">
-                        <h5 class="text-center montserrat-bold">{{portfolio.name}}</h5>
-                    </div>
+            {% if portfolio.thumb_image %}
+                <div class="image-zoom p-2">
+                    <a href="#">
+                        <img src="{{ portfolio.thumb_image.url }}" alt="{{ portfolio.name }}">
+                    </a>
                 </div>
-            </div>
+            {% else %}
+                <img src="{{ MEDIA_URL }}No_image.jpg" alt="{{ portfolio.name }}">
+            {% endif %}
         {% endfor %}
-        </div>
-    </div>
-    
+    </section>
+  
 
 
     <!-- Script for delete confirmation -->

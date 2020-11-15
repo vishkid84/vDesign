@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 from products.models import Category
 
 # Create your models here.
@@ -15,6 +16,7 @@ class Portfolio(models.Model):
     image_two = models.ImageField(null=True, blank=True)
     image_three_url = models.URLField(max_length=1024, null=True, blank=True)
     image_three = models.ImageField(null=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
