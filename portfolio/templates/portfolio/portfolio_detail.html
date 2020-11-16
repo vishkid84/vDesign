@@ -7,6 +7,14 @@
             <div class="col-lg-8 offset-lg-2">
                 <h3 class="montserrat-extra-bold mt-2 ">{{ portfolio.name }}</h3>
                 <p>{{ portfolio.description }}</p>
+                {% if request.user.is_superuser %}
+                    <div>
+                    <small>
+                        <a href="{% url 'edit_portfolio' portfolio.id %}" class="mr-2">Edit</a>
+                        <a class="text-danger confirm-delete" href="{% url 'delete_portfolio' portfolio.id %}">Delete</a>
+                    </small>
+                    </div>
+                {% endif %}
                 {% if portfolio.image_one %}
                 <div>
                     <img class="my-3 w-100" src="{{ portfolio.image_one.url }}" alt="{{ portfolio.name }}">
@@ -37,6 +45,7 @@
                 {% endif %}
 
                 <a href="{% url 'portfolios' %}" class="btn btn-primary rounded-0 mb-4"><i class="fas fa-angle-left"></i> Back to Portfolios</a>
+                
             </div>
         </div>
     </div>

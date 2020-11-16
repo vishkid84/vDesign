@@ -53,3 +53,42 @@ def add_portfolio(request):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def edit_portfolio(request, portfolio_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only admin has the permission to do that.')
+        return redirect(reverse('home'))
+
+    portfolio = get_object_or_404(Portfolio, pk=portfolio_id)
+
+    if request.method == 'POST':
+        form = PortfolioForm(request.POST, request.FILES, instance=portfolio) 
+        if form.is_valid():
+            portfolio = form.save()
+            messages.success(request, 'Successfully update portfolio!')
+            return redirect(reverse('portfolio_detail', args=[portfolio.id]))
+        else:
+            messages.error(request, 'Failed to add portfolio. Please ensure the form is valid.')
+    else:     
+        form = PortfolioForm(instance=portfolio)
+        messages.info(request, f'You are editing {portfolio.name}')
+
+    template = 'portfolio/edit_portfolio.html'
+    context = {
+        'form': form,
+        'portfolio': portfolio,
+    }
+    return render(request, template, context)
+
+@login_required
+def delete_portfolio(request, portfolio_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only admin has the permission to do that.')
+        return redirect(reverse('home'))
+        
+    portfolio = get_object_or_404(Portfolio, pk=portfolio_id)
+    portfolio.delete()
+    messages.success(request, 'Portfolio item deleted')
+    return redirect(reverse('portfolios'))
