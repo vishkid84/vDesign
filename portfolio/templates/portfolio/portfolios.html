@@ -14,7 +14,7 @@
         {% for portfolio in portfolios %}
             {% if portfolio.thumb_image %}
                 <div class="image-zoom p-2">
-                    <a href="#">
+                    <a href="{% url 'portfolio_detail' portfolio.id %}">
                         <img src="{{ portfolio.thumb_image.url }}" alt="{{ portfolio.name }}">
                     </a>
                 </div>

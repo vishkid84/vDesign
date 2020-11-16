@@ -85,6 +85,10 @@ main {
     background-color: #ade1f5;
 }
 
+.border-top{
+    border-top: 1px solid #c8d1da;
+}
+
 footer {
     position: fixed;
     bottom: 0;
@@ -214,31 +218,6 @@ footer {
 
 /* -------Portfolio--------- */
 
-.portfolio-container {
-  position: relative;
-}
-
-.portfolio-container img {
-    vertical-align: middle;
-    width: 100%;
-}
-
-.portfolio-container .portfolio-content {
-  position: absolute;
-  bottom: 0;
-  background: rgb(0, 0, 0); /* Fallback color */
-  background: rgba(0, 0, 0, 0.9); /* Black background with 0.5 opacity */
-  color: #f1f1f1;
-  width: 100%;
-  padding: 35px;
-  transition: .6s ease-in-out;
-  opacity:0;
-}
-
-.portfolio-container:hover .portfolio-content {
-  opacity:1;
-}
-
 #photos {
    /* Prevent vertical gaps */
    line-height: 0;
@@ -286,6 +265,11 @@ footer {
   }
 }
 
+.portfolio-container{
+    padding: 30px 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
 
 /* -----------bootstrap toasts----------- */
 
