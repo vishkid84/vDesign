@@ -212,15 +212,18 @@ footer {
 
 /* --------Contact-------- */
 
-.ppt-quote-form .btn{
+.contact-form-container .btn{
     width: 120px;
+}
+
+.quote-container .btn{
+    width: 185px !important;
 }
 
 /* -------Portfolio--------- */
 
 #photos {
    /* Prevent vertical gaps */
-   position: relative;
    line-height: 0;
    
    -webkit-column-count: 3;

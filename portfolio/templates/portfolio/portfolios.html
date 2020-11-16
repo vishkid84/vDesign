@@ -2,15 +2,8 @@
 {% load static %}
 
 {% block content %}
-    <div class="container-fluid p-50">
-        <div class="row">
-            <div class="col-md-9">
-                <h2 class="bold-title montserrat-bold">Portfolio</h2>
-            </div>
-        </div>
-    </div>
 
-    <section id="photos" class="bg-white mb-5">
+    <section id="photos" class="bg-white">
         {% for portfolio in portfolios %}
             {% if portfolio.thumb_image %}
                 <div class="image-zoom p-2">

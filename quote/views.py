@@ -79,3 +79,12 @@ def ppt_quote_detail(request, project_id):
         'quote': quote,
     }
     return render(request, template, context)
+
+
+def web_quote(request):
+    template = 'quote/web_quote.html'
+    context = {
+
+    }
+
+    return render(request, template, context)

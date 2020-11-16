@@ -3,21 +3,14 @@
 
 {% block content %}
     <div class="container-fluid about-container">
-
-        <div class="row" >
-            <div class="col contact-me">
-                <h2 class="bold-title montserrat-bold">Contact</h2>
-            </div>
-        </div>
-
         <div class="row">
-            <div class="col-md-6 bg-blue contact-me">
+            <div class="col-md-6 bg-blue contact-me quote-container">
                 <h4 class="bold-title montserrat-bold">Are you looking for a quote?</h4>
                 <p>Are you looking for someone to spice up your presentation or is it your website that needs to be designed?</p>
                 <div class="col-12 pl-0">
-                    <p>I want a quote for:</p>
-                    <a href="{% url 'ppt_quote' %}" class="btn btn-primary mr-3 mt-3 rounded-pill px-3 py-2">I want a quote for presentation design</a>
-                    <a href="{% url 'products' %}" class="btn btn-secondary mt-3 rounded-pill px-3 py-2">I want a quote for web design</a>
+                    <p class="montserrat-extra-bold">I want a quote for:</p>
+                    <a href="{% url 'ppt_quote' %}" class="btn btn-primary mr-3 rounded-pill px-3 py-2">Presentation design</a>
+                    <a href="{% url 'web_quote' %}" class="btn btn-secondary rounded-pill px-3 py-2">Web design</a>
                 </div>
             </div> 
             <div class="col-md-6 bg-purple contact-me">
@@ -29,7 +22,7 @@
                     <form action="{% url 'contact' %}" method="POST" class="contact-form" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{form|crispy}}
-                        <input type="submit" class="btn btn-primary mr-3 mt-3 rounded-pill " value="Submit">
+                        <input type="submit" class="btn btn-primary mr-3 mt-3 rounded-pill px-3 py-2" value="Submit">
                     </form>
                 </div>
             </div>
