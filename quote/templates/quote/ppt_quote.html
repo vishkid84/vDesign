@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block content %}
-    <div class="container main-container">
+    <div class="container-fluid main-container bg-blue">
         <div class="row">
-            <div class="col">
-                <h2 class="bold-title montserrat-bold">Get a quote for PowerPoint project</h2>
+            <div class="col-md-6 offset-md-3">
+                <h3 class="bold-title montserrat-bold">Get a quote for PowerPoint project</h3>
             </div>
         </div>
 
         <div class="row mt-4">
-            <div class="col">
+            <div class="col-md-6 offset-md-3">
                 <form action="{% url 'ppt_quote' %}" method="POST" class="ppt-quote-form">
                     {% csrf_token %}
                     {{form|crispy}}
-                    <input type="submit" class="btn btn-primary mr-3 mt-3 rounded-pill " value="Get a quote">
-                    <a href="{% url 'home' %}" class="btn btn-secondary mt-3 rounded-pill">Cancel</a>
+                    <input type="submit" class="btn btn-primary mr-3 mt-3 rounded-pill px-3 py-2" value="Get a quote">
+                    <a href="{% url 'contact' %}" class="btn btn-secondary mt-3 rounded-pill px-3 py-2">Cancel</a>
                 </form>
             </div>
         </div>

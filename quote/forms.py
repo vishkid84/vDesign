@@ -6,6 +6,5 @@ class PowerPointProjectForm(forms.ModelForm):
         model = PowerPointProject
         fields = ['your_full_name',
                   'project_name',
-                  'project_description',
                   'requirements',
                   ]

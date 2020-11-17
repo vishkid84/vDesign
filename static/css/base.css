@@ -89,6 +89,30 @@ main {
     border-top: 1px solid #c8d1da;
 }
 
+.form-control{
+    border-radius: 0;
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
 footer {
     position: fixed;
     bottom: 0;
@@ -100,9 +124,7 @@ footer {
     z-index: -2;
 }
 
-.form-control{
-    border-radius: 0;
-}
+
 
 /* ----------Home-------------- */
 /* .title-image-box{
@@ -220,6 +242,10 @@ footer {
     width: 185px !important;
 }
 
+.ppt-quote-form .btn{
+    width: 120px !important;
+}
+
 /* -------Portfolio--------- */
 
 #photos {
@@ -305,6 +331,10 @@ footer {
 .allauth-form-inner-content input:focus {
     box-shadow: 0 1px 3px 0 #cfd7df;
     border-color: #80bdff;
+}
+
+.allauth-form-inner-content .btn{
+    width: 120px;
 }
 
 /* --------Media center---------------- */

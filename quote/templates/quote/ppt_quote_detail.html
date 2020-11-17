@@ -12,10 +12,10 @@
         <div class="row mt-3">
             <div class="col">
                 <div class="quote-container bg-blue p-3 mb-3">
-                    <p class="mb-3"><span class="montserrat-extra-bold">Client Name: </span>{{ quote.your_full_name }}</p>
-                    <p class="mb-3"><span class="montserrat-extra-bold">Project Name: </span>{{ quote.project_name }}</p>
-                    <p class="mb-3"><span class="montserrat-extra-bold">Project Details: </span>{{ quote.project_description }}</p>
-                    <span class="montserrat-extra-bold">Project Details: </span>
+                    <p class="mb-3"><span class="montserrat-bold">Client Name: </span>{{ quote.your_full_name }}</p>
+                    <p class="mb-3"><span class="montserrat-bold">Project Name: </span>{{ quote.project_name }}</p>
+                    <p class="mb-3"><span class="montserrat-bold">Project Details: </span>{{ quote.project_description }}</p>
+                    <span class="montserrat-bold">Project Requirements: </span>
                     <ul class="pl-3">
                         {% for choice in quote_choices %}
                         <li >
@@ -24,9 +24,17 @@
                         {% endfor %}
                     </ul>
                     <hr>
-                    <p class="mb-3"><span class="montserrat-bold">Your Quote: </span> <span class="montserrat-extra-bold">€{{quote.quote}}</span> per hour</p>
+                    <h5 class="mb-1"><span class="montserrat-bold">Your Quote: </span> <span class="montserrat-extra-bold">€{{quote.quote}}</span> per hour</h5>
                 </div>
                 <small class="mt-5">* The quote is only an estimate. It may slightly vary depending on the complexity of the slides.</small>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <div class="bg-white p-3">
+                    <p>You can contact me for work from the Contact page by clicking the button below.</p>
+                    <a class="btn btn-primary rounded-pill px-3 py-2 mb-2" href="{% url 'contact' %}">Go to Contact page</a>
+                </div>
             </div>
         </div>
 
