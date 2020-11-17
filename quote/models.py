@@ -4,15 +4,15 @@ from django.contrib.auth.models import User
 
 
 class PowerPointProject(models.Model):
-    PPT_CHOICES = (('Low', 'Check for alignment issues, fix fonts and font sizes'),
-                    ('Low', 'Change text/table to other layouts to represent better'),
-                    ('Medium', 'Use appropriate cover image and divider image'),
-                    ('Medium', 'Use appropriate images and icons/pictograms'),
-                    ('Medium', 'Add basic animations/transitions'),
-                    ('Medium', 'Convert to an interactive PDF'),
-                    ('High', 'Develop a theme/style for the document and design the document based on the theme'),
-                    ('High', 'Change layouts to high-end infographics by adding vectors/pictograms'),
-                    ('High', 'Use high-end complex animations to represent the data'))
+    PPT_CHOICES = ((0, 'Check for alignment issues, fix fonts and font sizes'),
+                    (1, 'Change text/table to other layouts to represent better'),
+                    (2, 'Use appropriate cover image and divider image'),
+                    (3, 'Use appropriate images and icons/pictograms'),
+                    (4, 'Add basic animations/transitions'),
+                    (5, 'Convert to an interactive PDF'),
+                    (6, 'Develop a theme/style for the document and design the document based on the theme'),
+                    (7, 'Change layouts to high-end infographics by adding vectors/pictograms'),
+                    (8, 'Use high-end complex animations to represent the data'))
 
     client = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     your_full_name = models.CharField(max_length=300)

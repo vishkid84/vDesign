@@ -15,33 +15,35 @@ def ppt_quote(request):
 
             # Getting the quote
             '''
-            Check if low, medium or high values appear in the requirement input form.
-            Count the number of occurences in each.
-            Multiply them by individual price rate set for high, medium and low
+            Check the value selected by users.
+            If selection is 0,1 or both, increment by 5 to the quote.
+            If selection is any of 2-5 or all, increment by 4.
+            If selection is any of 6-8 or all, increment by 8.
             '''
-            req = form['requirements'].value()
-            if 'Low' in req:
-                low = req.count('Low')
-                low_quote = 5 * low
-            else:
-                low_quote = 0
-            print (low_quote)
+            requirement = form['requirements'].value()
+            quote = 0
+            if '0' in requirement:
+                quote += 5
+            if '1' in requirement:
+                quote += 5
 
-            if 'Medium' in req:
-                medium = req.count('Medium')
-                medium_quote = 4 * medium
-            else:
-                medium_quote = 0
-            print (medium_quote)
+            if '2' in requirement:
+                quote += 4
+            if '3' in requirement:
+                quote += 4
+            if '4' in requirement:
+                quote += 4
+            if '5' in requirement:
+                quote += 4
 
-            if 'High' in req:
-                high = req.count('High')
-                high_quote = 8 * high
-            else:
-                high_quote = 0
-            print (high_quote)
+            if '6' in requirement:
+                quote += 8
+            if '7' in requirement:
+                quote += 8
+            if '8' in requirement:
+                quote += 8
 
-            form.instance.quote = low_quote + medium_quote + high_quote
+            form.instance.quote = quote
 
             projects = form.save()
             messages.success(request, 'Successfully submitted for quote!')
@@ -50,7 +52,6 @@ def ppt_quote(request):
             messages.error(request, 'Failed to get quote. Please ensure the form is valid.')
     else:
         form = PowerPointProjectForm()
-        print (form.instance.requirements)
 
     template = 'quote/ppt_quote.html'
     context = {
@@ -70,13 +71,28 @@ def ppt_quote_out(request):
     }
     return render(request, template, context)
 
+
 def ppt_quote_detail(request, project_id):
     # Page to show the quote to the client
     quote = get_object_or_404(PowerPointProject, pk=project_id)
 
+    # Getting the value text in requirements intead of key to render to html
+    '''
+    For key, value in requirements array,
+    check if selected requirements' key is equal to
+    key in requirements array. 
+    If yes, append the value to the empty list quote_choices.
+    '''
+    quote_choices = []
+    for k, v in quote.requirements.choices.items():
+        for i in quote.requirements:
+            if int(k) == int(i):
+                quote_choices.append(v)
+
     template = 'quote/ppt_quote_detail.html'
     context = {
         'quote': quote,
+        'quote_choices': quote_choices,
     }
     return render(request, template, context)
 

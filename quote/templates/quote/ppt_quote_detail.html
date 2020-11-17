@@ -5,16 +5,24 @@
     <div class="container main-container">
         <div class="row">
             <div class="col">
-                <h2 class="bold-title montserrat-bold">You can find your quote below</h2>
+                <h4 class="bold-title montserrat-bold">You can find your quote below</h4>
             </div>
         </div>
 
         <div class="row mt-3">
             <div class="col">
                 <div class="quote-container bg-blue p-3 mb-3">
-                    <p class="mb-3"><span class="montserrat-bold">Client Name: </span>{{quote.your_full_name}}</p>
-                    <p class="mb-3"><span class="montserrat-bold">Project Name: </span>{{quote.project_name}}</p>
-                    <p class="mb-3"><span class="montserrat-bold">Project Details: </span>{{quote.project_description}}</p>
+                    <p class="mb-3"><span class="montserrat-extra-bold">Client Name: </span>{{ quote.your_full_name }}</p>
+                    <p class="mb-3"><span class="montserrat-extra-bold">Project Name: </span>{{ quote.project_name }}</p>
+                    <p class="mb-3"><span class="montserrat-extra-bold">Project Details: </span>{{ quote.project_description }}</p>
+                    <span class="montserrat-extra-bold">Project Details: </span>
+                    <ul class="pl-3">
+                        {% for choice in quote_choices %}
+                        <li >
+                            {{ choice }}
+                        </li>
+                        {% endfor %}
+                    </ul>
                     <hr>
                     <p class="mb-3"><span class="montserrat-bold">Your Quote: </span> <span class="montserrat-extra-bold">€{{quote.quote}}</span> per hour</p>
                 </div>
