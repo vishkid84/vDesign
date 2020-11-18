@@ -5,19 +5,19 @@
     <div class="container-fluid main-container">
         <div class="row">
             <div class="col-md-9">
-                <h2 class="bold-title montserrat-bold">A set of readymade templates for you</h2>
+                <h2>Shop</h2>
+                <h4 class="bold-title montserrat-bold mt-4">A set of readymade templates for you</h4>
                 <p>Don't stress yourself trying to create presentations or websites that capture viewers' attention. Take a look at the collection of prebuilt PowerPoint templates and Bootstrap templates which you can purchase from here.</p>
             </div>
-            <div class="col-md-3">
-                <div class="dropdown show dropleft ">
-                    <a class="btn btn-primary products_dropdown-button dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Filter by
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="{% url 'products' %}?category=ppt">PowerPoint templates</a>
-                        <a class="dropdown-item" href="{% url 'products' %}?category=bootstrap">Bootstrap template</a>
-                        <a class="dropdown-item" href="{% url 'products' %}?category=ppt,bootstrap">All</a>
-                    </div>
+
+            <div class="dropdown products-filter show dropleft">
+                <a class="btn btn-primary products_dropdown-button dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Filter by
+                </a>
+                <div class="dropdown-menu px-2" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="{% url 'products' %}?category=ppt">PowerPoint templates</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=bootstrap">Bootstrap template</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=ppt,bootstrap">All</a>
                 </div>
             </div>
 

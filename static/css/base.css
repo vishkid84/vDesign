@@ -190,19 +190,24 @@ footer {
 }
 
 .products_dropdown-button{
-    border-radius: 50px;
-    padding: 5px 10px;
+    border-radius: 0px;
+    padding: 8px 15px;
 }
 
 .shopping-bag-container{
     position: absolute;
-    right: 0;
-    top: 75px;
-    margin-right: 35px;
+    right: 35px;
+    top: 150px;
     font-size: 1.1rem;
     padding: 10px;
-    border: 1px solid;
+    border: 1px solid #9da1a3;
     background: #fafafa;
+}
+
+.products-filter{
+    position: absolute;
+    right: 35px;
+    top: 100px;
 }
 
 .shopping-bag-container a{
@@ -305,7 +310,7 @@ footer {
 
 .message-container{
     position: fixed;
-    top: 130px;
+    top: 85px;
     right: 35px;
     z-index: 999999;
 }
