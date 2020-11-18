@@ -197,7 +197,7 @@ footer {
 .shopping-bag-container{
     position: absolute;
     right: 35px;
-    top: 150px;
+    top: 100px;
     font-size: 1.1rem;
     padding: 10px;
     border: 1px solid #9da1a3;
@@ -207,7 +207,7 @@ footer {
 .products-filter{
     position: absolute;
     right: 35px;
-    top: 100px;
+    top: 160px;
 }
 
 .shopping-bag-container a{
