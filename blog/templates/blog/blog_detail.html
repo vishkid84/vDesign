@@ -19,7 +19,7 @@
                 <div class="blog-container bg-white p-3 mb-3">
                     <p class="text-uppercase">{{blog.category.friendly_name}}</p>
                     <a class="blog-title-link" href=""><h5 class="mt-3 bold-title montserrat-bold">{{blog.title}}</h5></a>
-                    <p>{{blog.content}}</p>
+                    {{blog.content|linebreaks}}
                     <div class="d-flex">
                         <div class="date ">
                             <small>{{blog.date}}</small>

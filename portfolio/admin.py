@@ -10,6 +10,6 @@ class PortfolioAdmin(admin.ModelAdmin):
         'thumb_image',
     )
 
-    ordering = ('name',)
+    ordering = ('date',)
 
 admin.site.register(Portfolio, PortfolioAdmin)
