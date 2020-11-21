@@ -124,7 +124,18 @@ footer {
     z-index: -2;
 }
 
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+}
 
+.back-to-top:hover{
+    background-color: #294384;
+    border-color: #294384;
+    color: white;
+}
 
 /* ----------Home-------------- */
 
