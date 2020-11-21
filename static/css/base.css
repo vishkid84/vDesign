@@ -17,8 +17,19 @@ h2 {
 .navbar-brand{
     font-family: 'Big Shoulders Stencil Text', cursive;
     font-weight: 800;
-    color: #9c5ae7 !important;
+    background: linear-gradient(to right, #9c5ae7, #5680E9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 2rem;
+}
+
+.navbar-light .navbar-nav .active>.nav-link{
+    color: #5680E9;
+    font-weight: 500;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #5680E9;
 }
 
 .btn-primary{
