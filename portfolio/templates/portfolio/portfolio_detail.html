@@ -17,7 +17,9 @@
                 {% endif %}
                 {% if portfolio.image_one %}
                 <div>
-                    <img class="my-3 w-100" src="{{ portfolio.image_one.url }}" alt="{{ portfolio.name }}">
+                    <a href="{{ portfolio.image_one.url }}" target="_blank">
+                        <img class="my-3 w-100" src="{{ portfolio.image_one.url }}" alt="{{ portfolio.name }}">
+                    </a>
                 </div>
                 {% else %}
                 <div>
@@ -29,7 +31,9 @@
 
                 {% if portfolio.image_two %}
                 <div>
-                    <img class="my-3 w-100" src="{{ portfolio.image_two.url }}" alt="{{ portfolio.name }}">
+                    <a href="{{ portfolio.image_two.url }}" target="_blank">
+                        <img class="my-3 w-100" src="{{ portfolio.image_two.url }}" alt="{{ portfolio.name }}">
+                    </a>
                 </div>
                 {% else %}
                 <div>
@@ -39,7 +43,9 @@
 
                 {% if portfolio.image_three %}
                 <div>
-                    <img class="my-3 w-100" src="{{ portfolio.image_three.url }}" alt="{{ portfolio.name }}">
+                    <a href="{{ portfolio.image_three.url }}" target="_blank">
+                        <img class="my-3 w-100" src="{{ portfolio.image_three.url }}" alt="{{ portfolio.name }}">
+                    </a>
                 </div>
 
                 {% endif %}
