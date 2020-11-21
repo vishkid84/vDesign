@@ -8,11 +8,15 @@
                 <h4 class="montserrat-bold mt-2">{{ product.name }}</h4>
                 {% if product.image %}
                 <div class="image-zoom">
-                    <img class="product-image my-3" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <a href="{{ product.image.url }}" target="_blank">
+                        <img class="product-image my-3" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </a>
                 </div>
                 {% else %}
                 <div class="image-zoom">
-                    <img class="product-image my-3" src="{{ MEDIA_URL }}No_image.jpg" alt="{{ product.name }}">
+                    <a href="{{ product.image.url }}" target="_blank">
+                        <img class="product-image my-3" src="{{ MEDIA_URL }}No_image.jpg" alt="{{ product.name }}">
+                    </a>
                 </div>
                 {% endif %}
             </div>
