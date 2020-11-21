@@ -127,9 +127,6 @@ footer {
 
 
 /* ----------Home-------------- */
-/* .title-image-box{
-    height: 500px;
-} */
 
 .title-box{
     margin: auto;
@@ -154,12 +151,6 @@ footer {
 .gutter-all-sides,
 .contact-me{
     padding: 50px;
-}
-
-/* ----------About-------------- */
-
-.presentation-design-box, .web-design-box{
-    margin-bottom: 8rem !important;
 }
 
 /* -----------Shop-------------- */
