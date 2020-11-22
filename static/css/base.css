@@ -17,9 +17,7 @@ h2 {
 .navbar-brand{
     font-family: 'Big Shoulders Stencil Text', cursive;
     font-weight: 800;
-    background: linear-gradient(to right, #9c5ae7, #5680E9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #9c5ae7 !important;
     font-size: 2rem;
 }
 
@@ -247,6 +245,16 @@ footer {
 
 .checkout-btn{
     background: #2e2e38 !important;
+}
+
+.product-name-link{
+    color: inherit;
+    text-decoration: none;
+}
+
+.product-name-link:hover{
+    color: #555;
+    text-decoration: none;
 }
 
 

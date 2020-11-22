@@ -59,7 +59,9 @@
                     </a>
                 </div>
                 {% endif %}
-                <h5 class="montserrat-bold mt-1">{{ product.name }}</h5>
+                <a class="product-name-link" href="{% url 'product_detail' product.id %}">
+                    <h5 class="montserrat-bold mt-1">{{ product.name }}</h5>
+                </a>
                 {% if request.user.is_superuser %}
                     <small >
                         <a href="{% url 'edit_product' product.id %}" class="mr-2">Edit</a>
