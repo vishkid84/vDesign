@@ -12,7 +12,9 @@
                     </a>
                 </div>
             {% else %}
-                <img src="{{ MEDIA_URL }}No_image.jpg" alt="{{ portfolio.name }}">
+                <a href="{% url 'portfolio_detail' portfolio.id %}">
+                    <img src="{{ MEDIA_URL }}No_image.jpg" alt="{{ portfolio.name }}">
+                </a>
             {% endif %}
         {% endfor %}
     </section>
