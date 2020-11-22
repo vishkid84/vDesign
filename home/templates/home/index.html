@@ -2,23 +2,23 @@
 {% load static %}
 
 {% block content %}
-    <div class="container-fluid home-container">
+    <div class="container-fluid home-container height-fill">
 
         <div class="row" >
-            <div class="col-md-6 title-image-box bg-blue">
+            <div class="col-lg-6 title-image-box bg-blue">
                 <img class="img-fluid product-image my-4" src="{{ MEDIA_URL }}Home_ppt_thumb.jpg" alt="PowerPoint static image">
             </div>
-            <div class="col-md-6 title-box">
+            <div class="col-lg-6 title-box">
                 <h1 class="bold-title montserrat">Presentation Designer | <br>   Web Designer</h1>
                 <a class="btn btn-primary mt-4" href="{% url 'portfolios' %}" role="button">Take a look at my portfolio</a>
             </div>
         </div>
 
         <div class="row" >
-            <div class="col-md-6 title-image-box bg-purple order-md-last">
+            <div class="col-lg-6 title-image-box bg-purple order-lg-last">
                 <img class="img-fluid product-image my-4 pl-0" src="{{ MEDIA_URL }}Home_web_thumb.jpg" alt="Website static image">
             </div>
-            <div class="col-md-6 title-box">
+            <div class="col-lg-6 title-box">
                 <h4 class="montserrat">Presentation Design</h4>
                 <p>Anyone can create a slide but you need a designer to make it visually pleasing to the viewer.</p>
                 <h4 class="montserrat mt-4">Web Design</h4>

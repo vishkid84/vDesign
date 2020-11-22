@@ -94,6 +94,10 @@ main {
     background-color: #ade1f5;
 }
 
+.height-fill{
+    min-height: 70vh;
+}
+
 .border-top{
     border-top: 1px solid #c8d1da;
 }
@@ -171,6 +175,12 @@ footer {
 .gutter-all-sides,
 .contact-me{
     padding: 50px;
+}
+
+.title-image-box{
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 /* -----------Shop-------------- */
@@ -294,25 +304,12 @@ footer {
 
 @media (max-width: 1200px) {
   #photos {
-  -moz-column-count:    3;
-  -webkit-column-count: 3;
-  column-count:         3;
-  }
-}
-@media (max-width: 1000px) {
-  #photos {
-  -moz-column-count:    3;
-  -webkit-column-count: 3;
-  column-count:         3;
-  }
-}
-@media (max-width: 800px) {
-  #photos {
   -moz-column-count:    2;
   -webkit-column-count: 2;
   column-count:         2;
   }
 }
+
 @media (max-width: 400px) {
   #photos {
   -moz-column-count:    1;
@@ -363,10 +360,20 @@ footer {
     width: 120px;
 }
 
-/* --------Media center---------------- */
+/* --------Media queries---------------- */
 
 @media (max-width: 992px) { 
     .main-container{
         padding-top: 80px;
     }
  }
+
+ @media (min-width: 992px) {
+    .title-image-box{
+        min-height: 35vh;
+    }
+    .quote-container,
+    #photos{
+        min-height: 70vh;
+    }
+}
