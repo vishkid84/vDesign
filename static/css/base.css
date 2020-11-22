@@ -331,7 +331,7 @@ footer {
 
 .message-container{
     position: fixed;
-    top: 25px;
+    top: 85px;
     right: 35px;
     z-index: 999999;
 }
