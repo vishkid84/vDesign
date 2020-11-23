@@ -377,3 +377,9 @@ footer {
         min-height: 70vh;
     }
 }
+
+@media (max-width: 300px) { 
+    h1{
+        font-size: 1.8rem;
+    }
+ }
