@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Portfolio
 from .forms import PortfolioForm
 
-# Create your views here.
+
 def portfolios(request):
     portfolios = Portfolio.objects.all().order_by('-date')
 
@@ -64,14 +64,14 @@ def edit_portfolio(request, portfolio_id):
     portfolio = get_object_or_404(Portfolio, pk=portfolio_id)
 
     if request.method == 'POST':
-        form = PortfolioForm(request.POST, request.FILES, instance=portfolio) 
+        form = PortfolioForm(request.POST, request.FILES, instance=portfolio)
         if form.is_valid():
             portfolio = form.save()
             messages.success(request, 'Successfully update portfolio!')
             return redirect(reverse('portfolio_detail', args=[portfolio.id]))
         else:
             messages.error(request, 'Failed to add portfolio. Please ensure the form is valid.')
-    else:     
+    else:
         form = PortfolioForm(instance=portfolio)
         messages.info(request, f'You are editing {portfolio.name}')
 
@@ -82,12 +82,13 @@ def edit_portfolio(request, portfolio_id):
     }
     return render(request, template, context)
 
+
 @login_required
 def delete_portfolio(request, portfolio_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only admin has the permission to do that.')
         return redirect(reverse('home'))
-        
+
     portfolio = get_object_or_404(Portfolio, pk=portfolio_id)
     portfolio.delete()
     messages.success(request, 'Portfolio item deleted')

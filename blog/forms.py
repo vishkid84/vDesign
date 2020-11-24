@@ -1,6 +1,7 @@
 from django import forms
 from .models import BlogComment, Blog
 
+
 class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
@@ -17,6 +18,7 @@ class CommentForm(forms.ModelForm):
         'id': 'usercomment',
         'rows': '4',
     }), label='')
+
     class Meta:
         model = BlogComment
         fields = ['comment_content']

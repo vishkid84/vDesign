@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime
 from products.models import Category
 
-# Create your models here.
+
 class Portfolio(models.Model):
     category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=250)

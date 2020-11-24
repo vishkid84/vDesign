@@ -8,6 +8,7 @@ from .models import Blog, BlogComment
 from .forms import CommentForm, BlogForm
 from django.contrib.auth.models import User
 
+
 def blogs(request):
     blog_list = Blog.objects.all()
     query = None
@@ -24,8 +25,8 @@ def blogs(request):
             queries = Q(title__icontains=query) | Q(content__icontains=query)
             blog_list = blog_list.filter(queries)
 
-    # Pagination 
-    paginator =Paginator(blog_list, 3)
+    # Pagination
+    paginator = Paginator(blog_list, 3)
     page = request.GET.get('page', 1)
 
     try:
@@ -56,7 +57,7 @@ def blog_detail(request, blog_id):
             form.instance.blog = blog
             form.save()
         return redirect(reverse('blog_detail', args=[blog.id]))
-    
+
     template = 'blog/blog_detail.html'
 
     context = {
@@ -88,7 +89,7 @@ def add_blog(request):
         form = BlogForm()
 
     template = 'blog/add_blog.html'
-    context ={
+    context = {
         'form': form,
     }
 
@@ -118,7 +119,7 @@ def edit_blog(request, blog_id):
         messages.info(request, f'You are updating {blog.title}')
 
     template = 'blog/edit_blog.html'
-    context ={
+    context = {
         'form': form,
         'blog': blog
     }
@@ -131,7 +132,7 @@ def delete_blog(request, blog_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only admin has the permission to do that.')
         return redirect(reverse('blogs'))
-        
+
     blog = get_object_or_404(Blog, pk=blog_id)
     blog.delete()
     messages.success(request, 'Blog deleted')
@@ -157,7 +158,7 @@ def edit_comment(request, blog_id, comment_id):
         form = CommentForm(instance=comment)
 
     template = 'blog/edit_comment.html'
-    context ={
+    context = {
         'form': form,
         'blog': blog,
         'comment': comment,

@@ -13,9 +13,10 @@ from bag.contexts import bag_contents
 import stripe
 import json
 
+
 @require_POST
 def cache_checkout_data(request):
-    '''Determine whether the user has 
+    '''Determine whether the user has
     the save info box checked'''
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
@@ -75,7 +76,8 @@ def checkout(request):
 
             # Save the info to the user's profile if everything is working okay
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                            args=[order.order_number]))
 
         else:
             messages.error(request, 'There was an error with your form. \
@@ -121,7 +123,7 @@ def checkout(request):
 
     template = 'checkout/checkout.html'
     context = {
-        'order_form': order_form,   
+        'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }
@@ -163,7 +165,7 @@ def checkout_success(request, order_number):
         del request.session['bag']
 
     template = 'checkout/checkout_success.html'
-    context ={
+    context = {
         'order': order,
     }
 

@@ -6,7 +6,7 @@ from .forms import ContactForm
 
 
 def contact(request):
-    
+
     if request.method == 'POST':
         form = ContactForm(request.POST or None)
         if form.is_valid:

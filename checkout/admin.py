@@ -17,11 +17,11 @@ class OrderAdmin(admin.ModelAdmin):
     fields = ('order_number', 'user_profile', 'date', 'name',
               'email', 'phone_number', 'country',
               'postcode', 'city', 'street_address1',
-              'street_address2', 'county_or_state', 
+              'street_address2', 'county_or_state',
               'total',)
 
-    list_display = ('order_number', 'date', 
-                    'name','total')
+    list_display = ('order_number', 'date',
+                    'name', 'total')
 
     ordering = ('-date',)
 

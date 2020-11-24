@@ -61,6 +61,7 @@ def ppt_quote(request):
 
     return render(request, template, context)
 
+
 def ppt_quote_out(request):
     # Page to show first 5 quotes received
     projects = PowerPointProject.objects.all().order_by('-date')[0:5]
@@ -80,7 +81,7 @@ def ppt_quote_detail(request, project_id):
     '''
     For key, value in requirements array,
     check if selected requirements' key is equal to
-    key in requirements array. 
+    key in requirements array.
     If yes, append the value to the empty list quote_choices.
     '''
     quote_choices = []

@@ -3,7 +3,7 @@ from .models import PowerPointProject
 
 
 class PowerPointProjectAdmin(admin.ModelAdmin):
-    
+
     list_display = (
         'id',
         'client',
@@ -15,4 +15,3 @@ class PowerPointProjectAdmin(admin.ModelAdmin):
     )
 
 admin.site.register(PowerPointProject, PowerPointProjectAdmin)
-

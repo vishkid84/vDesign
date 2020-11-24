@@ -30,7 +30,7 @@ You can find the deployed site [here](https://vdesign.herokuapp.com/)
 
 As the site admin: 
 - One of the main purpose of the site is to showcase my two core skills - PowerPoint design and web design/development
-- I need a shopping page to sell already designed PowerPoint and Bootstrap templates for those who are looking for a quick and simple solution
+- I need a shopping page to sell already designed PowerPoint and Bootstrap templates for those who are looking for a quick and simple solution.  This should also help in generating income.
 - I need a page to pen down my thoughts about the two areas - PowerPoint and web. This helps in building confidence among users about my skills and also aids in some interaction with the users
 - I should have a contact page ready for people looking to contact me 
 
@@ -161,21 +161,21 @@ The fonts used are Montserrat and Open Sans. Big Shoulders Stencil Display used 
 
 ## Technologies Used
 
-HTML <br>
-CSS <br>
-Google fonts <br>
-Bootstrap <br>
-Javascript/jQuery used as part of Bootstrap and also for few other functions <br>
-Python 3 <br>
-Django<br>
-Stripe: The project uses Stripe's test payment functionality.<br>
-SQLite: The project uses SQLite as the relational database to hold the backend information for the varions models used, when running locally<br>
-PostgreSQL: The project uses Heroku's PostgreSQL relational database to hold the backend information for the various models used, when deployed remotely<br>
-AWS S3 to store static and media files<br>
-Heroku: The cloud based platform is used for deployment of the site. 
-Gitpod: Gitpod IDE is used to write the code and push to Github
-Github: Used as the remote reository to push and store the commited changes
-Git version control: Used this a lot to track changes and refer when needed
+- HTML <br>
+- CSS <br>
+- Google fonts <br>
+- Bootstrap <br>
+- Javascript/jQuery used as part of Bootstrap and also for few other functions <br>
+- Python 3 <br>
+- Django<br>
+- Stripe: The project uses Stripe's test payment functionality.<br>
+- SQLite: The project uses SQLite as the relational database to hold the backend information for the varions models used, when running locally<br>
+- PostgreSQL: The project uses Heroku's PostgreSQL relational database to hold the backend information for the various models used, when deployed remotely<br>
+- AWS S3 to store static and media files<br>
+- Heroku: The cloud based platform is used for deployment of the site. 
+- Gitpod: Gitpod IDE is used to write the code and push to Github
+- Github: Used as the remote reository to push and store the commited changes
+- Git version control: Used this a lot to track changes and refer when needed
 
 
 ## Testing
@@ -186,9 +186,32 @@ I used an [Excel](testing/Testing.xlsx) to update my testing. <br>
 I have pasted a screenshot of that below. 
 ![Test matrix](testing/Testing.png)
 
+### Testing user stories from UX
+
+As the site admin: 
+- One of the main purpose of the site is to showcase my two core skills - PowerPoint design and web design/development
+  * Portfolio serves this purpose by showing in detail the projects I have worked on. Blog also helps to an extent as I will be writing about topics regarding these two
+- I need a shopping page to sell already designed PowerPoint and Bootstrap templates for those who are looking for a quick and simple solution. This should also help in generating income.
+  * The shop sells Bootstrap and PowerPoint templates, both the condition of the user story is met here
+- I need a page to pen down my thoughts about the two areas - PowerPoint and web. This helps in building confidence among users about my skills and also aids in some interaction with the users
+  * The blog in the site is where I can write down my thoughts. For more interaction and involvement with the users, they have the option to add comments. 
+- I should have a contact page ready for people looking to contact me 
+  * There is a contact page with a form and also my email and phone number. Other than this, the contact details are added in the footer of every page which they can be viewed if they scroll down.
+
+As a user looking for freelancers:
+- I need to see the previous work done by the individual to make sure he is capable of meeting my requirements
+  * Portfolio highlights some of my previous work
+- I have some basic skills to carry out my work, so if there is anything that helps me with my work without hiring the person full time, that would be an advantage
+  * The shop section is helpful for users in this situation as they don't have to start coding or create a presentation from scratch. They have templates available which can be purchases from here. 
+- Most of the freelancers need to be contacted to get their rates, if I can get a quick glance at their rates from their website for my requirements, that would be amazing
+  * The quote section in the Contact page fulfills this user need. User can click on a button which takes them to a multiselect form. They can check all the requirements and on submit, they will be able to get an instant quote. 
+
 #### Validations
 
-Validated html and css with W3C validator.
+* Validated html and css with W3C validator. Passed without any errors. 
+* Checked Python with pep8 online checker, especially views. Found no major errors, fixed most formatting errors except for those lines exceeding by a very few characters and messages. 
+
+
 
 #### Noted errors and bugs
 
@@ -319,6 +342,7 @@ git push heroku master
 15. In Heroku, go to the Deploy tab and connect your app to your GitHub repository and **Enable Automatic Deployment** as the deployment method to automatically push the changes to Heroku from Github
 
 16. Your site would now be deployed to Heroku
+
 
 ## Credits
 
