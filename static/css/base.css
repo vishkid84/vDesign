@@ -199,6 +199,7 @@ footer {
 
 .image-zoom:hover img {
     transform: scale(1.05);
+    -webkit-transform:scale(1.05, 1.05);
 }
 
 .product-detail-container{
