@@ -60,7 +60,7 @@ To understand what features needs to be included, I browsed the internet for oth
 There are 6 main pages including the home page and a login/registration page. Other than these, there is a base page which serves as the base for all the other pages. 
 
 #### The home page
-The home page gives gives a quick glance at my core skill areas and a link to the Portfolio page. 
+The home page gives a quick glance at my core skill areas and a link to the Portfolio page.  
 
 #### About page
 
@@ -112,9 +112,9 @@ There are two buttons in this section - Presentation Design quote and Web Develp
 
 This section is available only for admin. This is a dropdown button in the navbar, when clicked on provides with three options 
 1. Add a template - To add a new template to the Shop section
-2. Add portfolio - To add a new work to the portfolio
+2. Add portfolio - To add a new work to the portfolio. Though the images will automatically realign no matter what the size is, it is ideal to resize them to fit better on screen. 
 3. Add blog - To add a new blog
-
+Not much styling added to this section as no user other than the admin has access to this. The focus on this section was functionality more than UI. 
 
 ### Skeleton
 
@@ -211,12 +211,11 @@ As a user looking for freelancers:
 * Validated html and css with W3C validator. Passed without any errors. 
 * Checked Python with pep8 online checker, especially views. Found no major errors, fixed most formatting errors except for those lines exceeding by a very few characters and messages. 
 
-
-
 #### Noted errors and bugs
 
-Portfolio page glitches in Safari, some images seem to be disappearing on hover. No solution found yet. 
-Toasts in IE found to be smaller in size than intended. Functionality is there so ignored it for now as not crucial.
+* Portfolio page glitches in Safari, some images seem to be disappearing on hover. No solution found yet. 
+* Found the site to be not very functionali in Internet Explorer. Toasts in IE found to be smaller in size than intended. Functionality is there so ignored it for now as not crucial but noticed few othe issues. Width for images not working in the shopping bag page and the card section is not visible in IE. 
+
 
 #### Responsiveness and browser compatibility
 
