@@ -158,6 +158,7 @@ The fonts used are Montserrat and Open Sans. Big Shoulders Stencil Display used 
 - Currently the actual product is not sent, it is only a mockup. Capability to actually send the product on purchase to be added at a later stage. 
 - Price quote to be added for Web Design as well
 - Ideally user should be able to view their quote readily without any more further clicks once they fill in the requirements in the quote form. Currently, it takes them to a separate page with the latest quotes from where they can click on their project to view the quote. This feature to be added at a later stage. 
+- Currently in blog page, when no results are found nothing returns. A message for empty search needs to be added in the next version. 
 
 ## Technologies Used
 

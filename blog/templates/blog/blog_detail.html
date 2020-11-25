@@ -35,14 +35,15 @@
                 <a href="{% url 'blogs' %}" class="btn btn-secondary rounded-0 mb-4"><i class="fas fa-angle-left"></i> Back to Blogs</a>
             </div>
         </div>
-
-        <div class="comment-section bg-purple mt-3">
+        
+        <div class="comment-section  mt-3">
             <div class="row">
-                <div class="col-md-6 offset-lg-3">
-                    <div class="post-comments p-3">
+                <div class="col-md-6 offset-lg-3 mb-4">
+                    <div class="post-comments bg-purple p-3">
                         <header>
-                            <h4 class="bold-title montserrat-bold mt-5 mb-5">Comments <span class="no-of-comments">({{blog.comments.count}})</span></h4>
+                            <h5 class="bold-title montserrat-extra-bold mt-2 mb-4">Comments <span class="no-of-comments">({{blog.comments.count}})</span></h5>
                         </header>
+                        <hr>
                         <div class="">
                             {% for comment in blog.get_comments %}
                             <div class="comment mb-0">
@@ -66,13 +67,14 @@
                 </div>
             </div>
 
-            {% if request.user.is_authenticated %}
+            
             <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="add-comment  p-3">
+                <div class="col-lg-6 offset-lg-3 mb-4">
+                    <div class="add-comment px-3 pt-3 pb-1 bg-white">
                         <header>
-                            <h4 class="bold-title montserrat-bold mt-5 mb-4">Leave a reply</h4>
+                            <h5 class="bold-title montserrat-extra-bold mb-3 mt-2">Leave a reply</h5>
                         </header>
+                        {% if request.user.is_authenticated %}
                         <form method="POST" action="#" class="commenting-form mb-5">
                             {% csrf_token %}
                             <div class="row">
@@ -84,9 +86,11 @@
                                 </div>
                             </div>
                         </form>
+                        {% else %}
+                        <p>You need to be logged in to add comments. Click <a href="{% url 'account_login' %}">here </a>to login</p>
+                        {% endif %}
                     </div>
                 </div>
-                {% endif %}
             </div>
         </div>
         
