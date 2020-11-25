@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                                 <div class="comment-body mt-3">
-                                    <p>{{comment.comment_content}}</p>
+                                    <p>{{comment.comment_content|linebreaks}}</p>
                                 </div>
                             </div>
                             {% if comment.user.id == user.id or request.user.is_superuser %}
