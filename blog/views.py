@@ -26,7 +26,14 @@ def blogs(request):
             blog_list = blog_list.filter(queries)
 
     # Pagination
-    paginator = Paginator(blog_list, 3)
+    '''
+    Paginator needs to be imported which is done at the top. 
+    Set the number of blog list to 5.
+    Query the database, pass the QuerySet to the Paginator.
+    Grab a Page and return to the template
+    '''
+
+    paginator = Paginator(blog_list, 6)
     page = request.GET.get('page', 1)
 
     try:
@@ -169,6 +176,7 @@ def edit_comment(request, blog_id, comment_id):
 
 @login_required
 def delete_comment(request, blog_id, comment_id):
+    ''' Logged in user can delete their comment if any'''
     blog = get_object_or_404(Blog, pk=blog_id)
     comment = get_object_or_404(BlogComment, pk=comment_id)
     comment.delete()

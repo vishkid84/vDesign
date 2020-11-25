@@ -347,7 +347,8 @@ git push heroku master
 
 ### Content
 
-All the text content were written by me. 
+All the text content were written by me. <br>
+Some of the blogs in the blog section added in from different websites, the sources are mentioned there itself. 
 
 ### Media
 
@@ -359,11 +360,12 @@ Various graphic designer websites, Pinterest and Squarespace templates were gone
 
 ### Acknowledgements
 
-Shopping section hugely inspired by the mini project 'Boutique-Ado' done as part of the course with Code Institute. Although they are customized for the site, shop section is mainly drawn upon that miniproject.<br>
-Blog section inspired by tutorials from [JustDjango](https://www.youtube.com/channel/UCRM1gWNTDx0SHIqUJygD-kQ) and [Codemy](https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw)<br>
-I also followed Udemy course by Ashutosh Pawar for more understanding of Django concpets [Django Masterclass](https://www.udemy.com/course/django-course/)<br>
-Arranging different sized images for portfolio found in [CSS Tricks](https://css-tricks.com/seamless-responsive-photo-grid/)
-Scroll to top found [here](https://codepen.io/michalwyrwa/pen/GBaPPj)
+* Shopping section hugely inspired by the mini project 'Boutique-Ado' done as part of the course with Code Institute. Although they are customized for the site, shop section is mainly drawn upon that miniproject.<br>
+* Blog section inspired by tutorials from [JustDjango](https://www.youtube.com/channel/UCRM1gWNTDx0SHIqUJygD-kQ) and [Codemy](https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw)<br>
+* I also followed Udemy course by Ashutosh Pawar for more understanding of Django concpets [Django Masterclass](https://www.udemy.com/course/django-course/)<br>
+* Arranging different sized images for portfolio found in [CSS Tricks](https://css-tricks.com/seamless-responsive-photo-grid/)
+* Pagination found in [simpleisbetterthancomplex](https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html)
+* Scroll to top found [here](https://codepen.io/michalwyrwa/pen/GBaPPj)
 
 
 Special thanks to my mentor Aaron Sinnott for helping me in the beginning and huge thanks to mentor Maranatha Ilesanmi for stepping in Aaron's absence.  
