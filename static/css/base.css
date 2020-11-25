@@ -79,7 +79,6 @@ main {
   position: relative;
   background: #e6eaea;
   margin-bottom: 350px;
-  box-shadow: 3px 2px 2px 0px rgba(51,51,51,0.5);
 }
 
 .bg-blue{
@@ -95,7 +94,7 @@ main {
 }
 
 .height-fill{
-    min-height: 70vh;
+    min-height: 72vh;
 }
 
 .border-top{
@@ -181,6 +180,15 @@ footer {
     display:flex;
     align-items:center;
     justify-content:center;
+}
+
+/* ------------About------------ */
+
+.about-intro{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 }
 
 /* -----------Shop-------------- */
@@ -311,6 +319,7 @@ footer {
   }
 }
 
+
 @media (max-width: 400px) {
   #photos {
   -moz-column-count:    1;
@@ -371,11 +380,13 @@ footer {
 
  @media (min-width: 992px) {
     .title-image-box{
-        min-height: 35vh;
+        min-height: 36vh;
     }
-    .quote-container,
-    #photos{
-        min-height: 70vh;
+    .quote-container{
+        min-height: 72vh;
+    }
+    .about-me-photo{
+        width: 100%;
     }
 }
 

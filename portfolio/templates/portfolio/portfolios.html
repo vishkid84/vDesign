@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    <section id="photos" class="bg-white">
+    <section id="photos" class="bg-white height-fill">
         {% for portfolio in portfolios %}
             {% if portfolio.thumb_image %}
                 <div class="image-zoom p-2">
@@ -18,7 +18,6 @@
             {% endif %}
         {% endfor %}
     </section>
-  
 
 
     <!-- Script for delete confirmation -->
