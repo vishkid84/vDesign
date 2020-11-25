@@ -300,47 +300,47 @@ Once you have set up locally, you can deploy to Heroku by following the below st
  STRIPE_WH_SECRET | obtained through your Stripe account
  USE_AWS | True
 
- 5. You need to login to Stripe, go to the developers section to get the pubic key ad secret key. For the AWS secret key, you need to login to AWS and create a new bucket
+ 5. You need to login to Stripe, go to the developers section to get the pubic key ad secret key. For the AWS secret key, you need to login to AWS and create a new bucket. Creating a new S3 bucket documentation can be found [here](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)
 
- 5. In Gitpod, create a requirements.txt file:
+ 6. In Gitpod, create a requirements.txt file:
 ```
 pip3 freeze --local > requirements.txt
 ```
 
-6. Create a Procfile:
+7. Create a Procfile:
 ```
 echo web: gunicorn hotel_eko.wsgi:application > Procfile
 ```
 
-7. As with local deployment, make migrations to set up the Postgres database:
+8. As with local deployment, make migrations to set up the Postgres database:
 ```
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 
-8. Create a superuser similar to the way in local deployment
+9. Create a superuser similar to the way in local deployment
 
-9. Run the server
+10. Run the server
 
-10. As with the local deployment, add /admin to the url to go to the admin and add or edit 
+11. As with the local deployment, add /admin to the url to go to the admin and add or edit 
 
-11. Add and commit your changes
+12. Add and commit your changes
 
-12. Login to Heroku by using the command 
+13. Login to Heroku by using the command 
 ```
 heroku login -i
 ```
-13. Once logged in, link your Heroku app created above as the remote repository with this command:
+14. Once logged in, link your Heroku app created above as the remote repository with this command:
 ```
 heroku git:remote -a <your app name here>
 ```
-14. Complete the deployment by pushing the projekt to Heroku:
+15. Complete the deployment by pushing the projekt to Heroku:
 ```
 git push heroku master
 ``` 
-15. In Heroku, go to the Deploy tab and connect your app to your GitHub repository and **Enable Automatic Deployment** as the deployment method to automatically push the changes to Heroku from Github
+16. In Heroku, go to the Deploy tab and connect your app to your GitHub repository and **Enable Automatic Deployment** as the deployment method to automatically push the changes to Heroku from Github
 
-16. Your site would now be deployed to Heroku
+17. Your site would now be deployed to Heroku
 
 
 ## Credits
