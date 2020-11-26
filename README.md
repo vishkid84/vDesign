@@ -209,14 +209,14 @@ As a user looking for freelancers:
 
 #### Validations
 
-* Validated html and css with W3C validator. Passed without any errors except for ppt quote page. HTML validation error '<label for="" class=" requiredField">' for the label in multiselectfield. The form comes from the model where the id should be coming from there, I could not find documentation about that for multiselectfield.
+* Validated html and css with W3C validator. Passed without any errors except for ppt quote page. HTML validation error ```<label for="" class=" requiredField">``` for the label in multiselectfield. The form comes from the model where the id should be coming from there, I could not find documentation about that for multiselectfield.
 * Checked Python with pep8 online checker, especially views. Found no major errors, fixed most formatting errors except for those lines exceeding by a very few characters and messages. 
 
 #### Noted errors and bugs
 
 * Portfolio page glitches in Safari, some images seem to be disappearing on hover. No solution found yet. 
 * Found the site to be not very functionali in Internet Explorer. Toasts in IE found to be smaller in size than intended. Functionality is there so ignored it for now as not crucial but noticed few othe issues. Width for images not working in the shopping bag page and the card section in checkout is not visible in IE. This woul have to be looked at in the next update but added a note in the Shop page that it does not work on IE.  
-* HTML validation error '<label for="" class=" requiredField">' for the label in multiselectfield. The form comes from the model where the id should be coming from, I could not find documentation about that for multiselectfield.
+* HTML validation error ```<label for="" class=" requiredField">``` for a label in multiselectfield for ppt_quote page. The form comes from the model where the id should be coming from, I could not find documentation about that for multiselectfield. Not sure if it is an issue with crispy forms when using multiselectfield. Browsed through the documentations about multiselectfield and crispy forms but could not find much resource about this. Talked with the support team in Code Institute as well but could not find the reason for that yet. Since the form functions and everything else is working well, ignoring that error for now. 
 
 
 #### Responsiveness and browser compatibility
