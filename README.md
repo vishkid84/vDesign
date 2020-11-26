@@ -120,9 +120,9 @@ Not much styling added to this section as no user other than the admin has acces
 
 You can see the wireframes saved as pdf below:
 
-[Wireframe for desktop](/wireframes/Wireframe_desktop.pdf)<br>
-[Wireframe for tablet](/wireframes/Wireframe_tablet.pdf)<br>
-[Wireframe for mobile](/wireframes/Wireframe_mobile.pdf)
+[Wireframe for desktop](/assets/wireframes/Wireframe_desktop.pdf)<br>
+[Wireframe for tablet](/assets/wireframes/Wireframe_tablet.pdf)<br>
+[Wireframe for mobile](/assets/wireframes/Wireframe_mobile.pdf)
 
 ### Surface
 
@@ -183,9 +183,9 @@ The fonts used are Montserrat and Open Sans. Big Shoulders Stencil Display used 
 
 All the links have been manually tested. <br>
 Tested if there are any problems in the coding or code styling from the Problems tab in Gitpod<br>
-I used an [Excel](testing/Testing.xlsx) to update my testing. <br>
-I have pasted a screenshot of that below. 
-![Test matrix](testing/Testing.png)
+I did a detailed testing on each page and updated the results using an [Excel](assets/testing/Testing.xlsx). <br>
+The Excel can be found in the above link. I have pasted a screenshot of that as well below. <br><br>
+![Test matrix](assets/testing/Testing.png)
 
 ### Testing user stories from UX
 
@@ -193,7 +193,7 @@ As the site admin:
 - One of the main purpose of the site is to showcase my two core skills - PowerPoint design and web design/development
   * Portfolio serves this purpose by showing in detail the projects I have worked on. Blog also helps to an extent as I will be writing about topics regarding these two
 - I need a shopping page to sell already designed PowerPoint and Bootstrap templates for those who are looking for a quick and simple solution. This should also help in generating income.
-  * The shop sells Bootstrap and PowerPoint templates, both the condition of the user story is met here
+  * The shop sells Bootstrap and PowerPoint templates, both the conditions of the user story is met here
 - I need a page to pen down my thoughts about the two areas - PowerPoint and web. This helps in building confidence among users about my skills and also aids in some interaction with the users
   * The blog in the site is where I can write down my thoughts. For more interaction and involvement with the users, they have the option to add comments. 
 - I should have a contact page ready for people looking to contact me 
@@ -203,19 +203,20 @@ As a user looking for freelancers:
 - I need to see the previous work done by the individual to make sure he is capable of meeting my requirements
   * Portfolio highlights some of my previous work
 - I have some basic skills to carry out my work, so if there is anything that helps me with my work without hiring the person full time, that would be an advantage
-  * The shop section is helpful for users in this situation as they don't have to start coding or create a presentation from scratch. They have templates available which can be purchases from here. 
+  * The shop section is helpful for users in this situation as they don't have to start coding or create a presentation from scratch. They have templates available which can be purchased from here. 
 - Most of the freelancers need to be contacted to get their rates, if I can get a quick glance at their rates from their website for my requirements, that would be amazing
   * The quote section in the Contact page fulfills this user need. User can click on a button which takes them to a multiselect form. They can check all the requirements and on submit, they will be able to get an instant quote. 
 
 #### Validations
 
-* Validated html and css with W3C validator. Passed without any errors. 
+* Validated html and css with W3C validator. Passed without any errors except for ppt quote page. HTML validation error '<label for="" class=" requiredField">' for the label in multiselectfield. The form comes from the model where the id should be coming from there, I could not find documentation about that for multiselectfield.
 * Checked Python with pep8 online checker, especially views. Found no major errors, fixed most formatting errors except for those lines exceeding by a very few characters and messages. 
 
 #### Noted errors and bugs
 
 * Portfolio page glitches in Safari, some images seem to be disappearing on hover. No solution found yet. 
-* Found the site to be not very functionali in Internet Explorer. Toasts in IE found to be smaller in size than intended. Functionality is there so ignored it for now as not crucial but noticed few othe issues. Width for images not working in the shopping bag page and the card section is not visible in IE. 
+* Found the site to be not very functionali in Internet Explorer. Toasts in IE found to be smaller in size than intended. Functionality is there so ignored it for now as not crucial but noticed few othe issues. Width for images not working in the shopping bag page and the card section in checkout is not visible in IE. This woul have to be looked at in the next update but added a note in the Shop page that it does not work on IE.  
+* HTML validation error '<label for="" class=" requiredField">' for the label in multiselectfield. The form comes from the model where the id should be coming from, I could not find documentation about that for multiselectfield.
 
 
 #### Responsiveness and browser compatibility
@@ -353,7 +354,7 @@ Some of the blogs in the blog section added in from different websites, the sour
 
 ### Media
 
-All the images were created and added by me
+All the images and mockups were created and added by me. Some mockups I created includes photos from Unsplash. 
 
 ### UI
 
@@ -361,11 +362,12 @@ Various graphic designer websites, Pinterest and Squarespace templates were gone
 
 ### Acknowledgements
 
-* Shopping section hugely inspired by the mini project 'Boutique-Ado' done as part of the course with Code Institute. Although they are customized for the site, shop section is mainly drawn upon that miniproject.<br>
+* Shopping section hugely inspired by the mini project 'Boutique-Ado' done as part of the course with Code Institute. Although they are customized for this site, shop section is mainly drawn upon that miniproject.<br>
 * Blog section inspired by tutorials from [JustDjango](https://www.youtube.com/channel/UCRM1gWNTDx0SHIqUJygD-kQ) and [Codemy](https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw)<br>
 * I also followed Udemy course by Ashutosh Pawar for more understanding of Django concpets [Django Masterclass](https://www.udemy.com/course/django-course/)<br>
 * Arranging different sized images for portfolio found in [CSS Tricks](https://css-tricks.com/seamless-responsive-photo-grid/)
 * Pagination found in [simpleisbetterthancomplex](https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html)
+* Multiselect field documentation referred from [here](https://pypi.org/project/django-multiselectfield/)
 * Scroll to top found [here](https://codepen.io/michalwyrwa/pen/GBaPPj)
 
 

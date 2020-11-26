@@ -17,11 +17,7 @@
                     <form action="{% url 'blogs' %}" method="GET" class="search-form">
                         <div class="form-group d-flex">
                             <input type="search" name="q" placeholder="What are you looking for?">
-                            {% if search %}
-                            <button type="submit" class="submit"><i class="fas fa-times"></i></button>
-                            {% else %}
                             <button type="submit" class="submit"><i class="fas fa-search"></i></button>
-                            {% endif %}
                         </div>
                     </form>
                 </div>

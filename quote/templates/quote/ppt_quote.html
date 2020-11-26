@@ -14,7 +14,7 @@
                 <form action="{% url 'ppt_quote' %}" method="POST" class="ppt-quote-form">
                     {% csrf_token %}
                     {{form|crispy}}
-                    <input type="submit" class="btn btn-primary mr-3 mt-3 rounded-pill px-3 py-2" value="Get a quote">
+                    <input type="submit" class="btn btn-primary mr-3 mt-3 rounded-pill px-3 py-2" id="pptquote" value="Get a quote">
                     <a href="{% url 'contact' %}" class="btn btn-secondary mt-3 rounded-pill px-3 py-2">Cancel</a>
                 </form>
             </div>
